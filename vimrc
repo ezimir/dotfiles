@@ -114,6 +114,16 @@
         set guifont=Source_Code_Pro_Light:h12
     endif
 
+    " assuming MacVim
+    if has("gui")
+        " tab navigation
+        nmap <D-S-Left> :tabprevious<CR>
+        nmap <D-S-Right> :tabnext<CR>
+
+        " make window semitransparent
+        set transparency=7
+    endif
+
 " Auto commands
     if has("autocmd")
         " highlight trailing whitespace
