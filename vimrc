@@ -1,7 +1,7 @@
 
 " General
     " explicitly get out of vi-compatible mode (use vim-defaults instead of vi-defaults (easier, more user friendly))
-    set nocompatible 
+    set nocompatible
 
     " don't use local version of .(g)vimrc, .exrc
     set noexrc
@@ -26,10 +26,10 @@
     set autoread
 
     " default file mode is unix
-    set fileformat=unix     
+    set fileformat=unix
 
     " support all three, in this order
-    set fileformats=unix,dos,mac 
+    set fileformats=unix,dos,mac
 
     " enable filetype plugins (auto completion and indentation support)
     filetype plugin on
@@ -38,7 +38,7 @@
 " Interaction/Mapping
     " change the mapleader from \ to ,
     let mapleader=","
-    
+
     " fast saving
     nmap <leader>w :w!<cr>
 
@@ -49,44 +49,41 @@
     nnoremap Q <Nop>
 
     " enable mouse (all modes)
-    set mouse=a             
+    set mouse=a
 
 " Interface
     " don't redraw while executing macros (good performance config)
     set lazyredraw
 
     " display cursor line
-    set cursorline          
+    set cursorline
 
     " lines above/below cursor when scrolling
-    set scrolloff=5         
+    set scrolloff=5
 
     " line numbers
     set number " show line numbers (enable line column)
     set relativenumber " +- from current line
 
     " show cursor position in status bar
-    set ruler               
+    set ruler
 
     " show matching bracket
-    set showmatch           
+    set showmatch
 
     " show mode in status bar (insert/replace/...)
-    set showmode            
+    set showmode
 
     " whitespace
     set list " display everything
-    set listchars=tab:▸\ , " specify whitespace representation characters 
+    set listchars=tab:▸\ , " specify whitespace representation characters
 
     " configure backspace so it acts as it should act
     set backspace=eol,start,indent " positions where to allow backspace
 
 " Editing
-    " syntax highlighting on
-    syntax on
-
     " dont wrap lines
-    set nowrap              
+    set nowrap
 
     " search
     set hlsearch " highlight search
@@ -106,6 +103,9 @@
     set smarttab " ???
 
 " Appearance
+    " syntax highlighting on
+    syntax on
+
     " simple dark scheme
     colorscheme desert
 
@@ -113,4 +113,14 @@
     if &t_Co >= 256 || has("gui_running")
         set guifont=Source_Code_Pro_Light:h12
     endif
+
+" Auto commands
+    if has("autocmd")
+        " highlight trailing whitespace
+        highlight ExtraWhitespace ctermbg=darkred guibg=darkred " name a new highlight group
+        match ExtraWhitespace /\s\+$/ " show the group
+
+        " Remove trailing whitespace in files
+        au BufWritePre * :%s/\s\+$//e
+    endif " has("autocmd")
 
