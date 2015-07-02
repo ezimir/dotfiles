@@ -11,6 +11,9 @@
     " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
 
+    " displays vertical lines where indents are
+    Plugin 'nathanaelkane/vim-indent-guides'
+
     call vundle#end()
 
 " General
@@ -150,3 +153,8 @@
     endif " has("autocmd")
 
 " Plugin configuration
+    " indent highlighting
+    let g:indent_guides_enable_on_vim_startup = 1 " auto enable
+    let g:indent_guides_start_level = 2 " don't highlight column 0
+    let g:indent_guides_guide_size = 1 " highlight 1 column wide
+
