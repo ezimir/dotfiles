@@ -14,6 +14,9 @@
     " displays vertical lines where indents are
     Plugin 'nathanaelkane/vim-indent-guides'
 
+    " syntax error checks
+    Plugin 'scrooloose/syntastic'
+
     call vundle#end()
 
 " General
@@ -128,12 +131,12 @@
     colorscheme desert
 
     " if possible, use nicer font
-    if &t_Co >= 256 || has("gui_running")
+    if &t_Co >= 256 || has('gui_running')
         set guifont=Source_Code_Pro_Light:h12
     endif
 
     " assuming MacVim
-    if has("gui")
+    if has('gui')
         " tab navigation
         nmap <D-S-Left> :tabprevious<CR>
         nmap <D-S-Right> :tabnext<CR>
@@ -143,18 +146,27 @@
     endif
 
 " Auto commands
-    if has("autocmd")
+    if has('autocmd')
         " highlight trailing whitespace
         highlight ExtraWhitespace ctermbg=darkred guibg=darkred " name a new highlight group
         match ExtraWhitespace /\s\+$/ " show the group
 
         " Remove trailing whitespace in files
         au BufWritePre * :%s/\s\+$//e
-    endif " has("autocmd")
+    endif " has('autocmd')
 
 " Plugin configuration
     " indent highlighting
     let g:indent_guides_enable_on_vim_startup = 1 " auto enable
     let g:indent_guides_start_level = 2 " don't highlight column 0
     let g:indent_guides_guide_size = 1 " highlight 1 column wide
+
+    " syntax errors
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1 " add errors to location list
+    let g:syntastic_check_on_open = 1 " check when opening file
+    let g:syntastic_check_on_wq = 0 " don't check when saving file (time saving)
 
