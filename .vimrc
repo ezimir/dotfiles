@@ -168,5 +168,16 @@
 
     let g:syntastic_always_populate_loc_list = 1 " add errors to location list
     let g:syntastic_check_on_open = 1 " check when opening file
-    let g:syntastic_check_on_wq = 0 " don't check when saving file (time saving)
+    let g:syntastic_check_on_wq = 0 " don't check when quitting (not going to see it)
+
+    " custom function for toggling :Errors location list
+    function! ToggleErrors()
+        let win_count = winnr('$') " save number of opened windows
+        lclose " try to close location list
+        if win_count == winnr('$') " if number of opened windows didn't change
+            Errors " nothing was closed, we can open error list
+        endif
+    endfunction
+
+    nmap <leader>e :call ToggleErrors()<cr>
 
