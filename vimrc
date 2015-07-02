@@ -1,4 +1,18 @@
 
+" Plugin Manager
+    " required for Vundle
+    set nocompatible
+    filetype off
+
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+
+    call vundle#end()
+
 " General
     " explicitly get out of vi-compatible mode (use vim-defaults instead of vi-defaults (easier, more user friendly))
     set nocompatible
@@ -107,6 +121,7 @@
     syntax on
 
     " simple dark scheme
+    set background=dark
     colorscheme desert
 
     " if possible, use nicer font
@@ -134,3 +149,4 @@
         au BufWritePre * :%s/\s\+$//e
     endif " has("autocmd")
 
+" Plugin configuration
