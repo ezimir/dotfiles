@@ -17,6 +17,9 @@
     " syntax error checks
     Plugin 'scrooloose/syntastic'
 
+    " autocompletion using <Tab>
+    Plugin 'ervandew/supertab'
+
     call vundle#end()
 
 " General
@@ -144,6 +147,12 @@
         " make window semitransparent
         set transparency=7
     endif
+
+    " autocompletion colors (popup menu)
+    highlight Pmenu ctermbg=0 ctermfg=7 guibg=#222222 guifg=#e5e5e5
+    highlight PmenuSel ctermbg=7 ctermfg=0 guibg=#e5e5e5 guifg=#222222
+    highlight PmenuSbar ctermbg=238 guibg=#444444
+    highlight PmenuThumb ctermbg=249 guibg=#aaaaaa
 
 " Auto commands
     if has('autocmd')
