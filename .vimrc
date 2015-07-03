@@ -20,6 +20,9 @@
     " autocompletion using <Tab>
     Plugin 'ervandew/supertab'
 
+    " comment/uncomment whole blocks
+    Plugin 'tpope/vim-commentary'
+
     call vundle#end()
 
 " General
