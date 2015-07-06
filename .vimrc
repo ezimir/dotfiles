@@ -214,11 +214,30 @@
         endif
     endfunction
 
-    nmap <leader>e :call ToggleErrors()<cr>
+    noremap <silent> <leader>e :call ToggleErrors()<cr>
 
     " remap ctrlp to always open in a new tab
     let g:ctrlp_prompt_mappings = {
         \ 'AcceptSelection("e")': ['<c-t>'],
         \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+        \ }
+
+    " when opening ctrlp location list, don't show already set statusline flag
+    function! EnterCtrlP()
+        " save current value of statusline
+        let g:ctrlp_statusline_restore = &statusline
+        " and reset it
+        set statusline&
+    endfunction
+
+    function! ExitCtrlP()
+        " restore previous statusline value
+        set statusline=%!g:ctrlp_statusline_restore
+    endfunction
+
+    " ctrpl event binding
+    let g:ctrlp_buffer_func = {
+        \ 'enter': 'EnterCtrlP',
+        \ 'exit': 'ExitCtrlP',
         \ }
 
