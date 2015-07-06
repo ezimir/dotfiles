@@ -23,6 +23,9 @@
     " comment/uncomment whole blocks
     Plugin 'tpope/vim-commentary'
 
+    " easy file opening
+    Plugin 'kien/ctrlp.vim'
+
     call vundle#end()
 
 " General
@@ -212,4 +215,10 @@
     endfunction
 
     nmap <leader>e :call ToggleErrors()<cr>
+
+    " remap ctrlp to always open in a new tab
+    let g:ctrlp_prompt_mappings = {
+        \ 'AcceptSelection("e")': ['<c-t>'],
+        \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+        \ }
 
