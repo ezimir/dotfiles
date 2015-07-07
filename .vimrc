@@ -26,6 +26,9 @@
     " easy file opening
     Plugin 'kien/ctrlp.vim'
 
+    " nicer statusline
+    Plugin 'itchyny/lightline.vim'
+
     call vundle#end()
 
 " General
@@ -100,8 +103,8 @@
     " show matching bracket
     set showmatch
 
-    " show mode in status bar (insert/replace/...)
-    set showmode
+    " don't show mode in status bar (insert/replace/...) (statusline plugin displays it)
+    set noshowmode
 
     " whitespace
     set list " display everything
@@ -222,22 +225,11 @@
         \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
         \ }
 
-    " when opening ctrlp location list, don't show already set statusline flag
-    function! EnterCtrlP()
-        " save current value of statusline
-        let g:ctrlp_statusline_restore = &statusline
-        " and reset it
-        set statusline&
     endfunction
 
-    function! ExitCtrlP()
-        " restore previous statusline value
-        set statusline=%!g:ctrlp_statusline_restore
     endfunction
 
-    " ctrpl event binding
-    let g:ctrlp_buffer_func = {
-        \ 'enter': 'EnterCtrlP',
-        \ 'exit': 'ExitCtrlP',
+    " for statusline to always appear
+    set laststatus=2
         \ }
 
