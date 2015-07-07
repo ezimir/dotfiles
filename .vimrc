@@ -204,6 +204,8 @@
     set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
 
+    let g:syntastic_stl_format = '[%E{E#%e}%B{, }%W{W#%w}]'
+
     let g:syntastic_always_populate_loc_list = 1 " add errors to location list
     let g:syntastic_check_on_open = 1 " check when opening file
     let g:syntastic_check_on_wq = 0 " don't check when quitting (not going to see it)
@@ -225,11 +227,37 @@
         \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
         \ }
 
+    " disable status function in ctrlp
+    let g:ctrlp_status_func = {
+        \   'main': 'CtrlPStatusFuncMain',
+        \   'prog': 'CtrlPStatusFuncProg',
+        \ }
+
+    function! CtrlPStatusFuncMain(focus, byfname, regex, prev, item, next, marked)
+        return lightline#statusline(0)
     endfunction
 
+    function! CtrlPStatusFuncProg(str)
+        return lightline#statusline(0)
     endfunction
 
     " for statusline to always appear
     set laststatus=2
+
+    " statusline configuration
+    let g:lightline = {
+        \   'active': {
+        \       'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ],
+        \       'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ], [ 'syntastic' ] ],
+        \   },
+        \   'component_expand': {
+        \       'syntastic': 'SyntasticStatuslineFlag',
+        \   },
+        \   'component_type': {
+        \       'syntastic': 'error',
+        \   },
+        \   'component': {
+        \       'readonly': '%{&readonly?"⭤":""}',
+        \   },
         \ }
 
