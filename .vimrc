@@ -29,6 +29,10 @@
     " nicer statusline
     Plugin 'itchyny/lightline.vim'
 
+    " code snippet autoexpansion
+    Plugin 'mattn/emmet-vim'
+    Plugin 'mattn/webapi-vim'
+
     call vundle#end()
 
 " General
@@ -264,4 +268,10 @@
         \       'readonly': '%{&readonly?"⭤":""}',
         \   },
         \ }
+
+    " set emmet expansion shortcut
+    let g:user_emmet_leader_key='<C-Z>'
+
+    " load custom emmet settings
+    let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snippets.json')), "\n"))
 
