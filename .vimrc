@@ -83,6 +83,10 @@
     " enable mouse (all modes)
     set mouse=a
 
+    " error list navigation
+    nmap <silent> ]e :lnext<CR>
+    nmap <silent> [e :lprev<CR>
+
 " Interface
     " don't redraw while executing macros (good performance config)
     set lazyredraw
