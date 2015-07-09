@@ -114,6 +114,9 @@
     " don't show mode in status bar (insert/replace/...) (statusline plugin displays it)
     set noshowmode
 
+    " show size of visual selection
+    set showcmd
+
     " whitespace
     set list " display everything
     set listchars=tab:▸\ , " specify whitespace representation characters
