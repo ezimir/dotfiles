@@ -231,15 +231,15 @@
 
     " remap ctrlp to always open in a new tab
     let g:ctrlp_prompt_mappings = {
-        \ 'AcceptSelection("e")': ['<c-t>'],
-        \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-        \ }
+        \   'AcceptSelection("e")': ['<c-t>'],
+        \   'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+        \}
 
     " disable status function in ctrlp
     let g:ctrlp_status_func = {
         \   'main': 'CtrlPStatusFuncMain',
         \   'prog': 'CtrlPStatusFuncProg',
-        \ }
+        \}
 
     function! CtrlPStatusFuncMain(focus, byfname, regex, prev, item, next, marked)
         return lightline#statusline(0)
@@ -267,7 +267,7 @@
         \   'component': {
         \       'readonly': '%{&readonly?"⭤":""}',
         \   },
-        \ }
+        \}
 
     " set emmet expansion shortcut
     let g:user_emmet_leader_key = '<C-E>'
