@@ -53,7 +53,7 @@
     " use N levels of undo
     set undolevels=1000
 
-    " remember undo after quitting
+    " hide buffers instead of asking if to save them
     set hidden
 
 
@@ -138,12 +138,12 @@
     set expandtab " turn a tabs into spaces
     set tabstop=4 " number of spaces a tab counts for
     set softtabstop=4 " ???
-    set autoindent " ???
+    set autoindent " insert indent when starting newline using o/O
     set shiftwidth=4 " spaces for autoindents
     set copyindent " copy the previous indentation on autoindenting
     set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
     set smartindent " ???
-    set smarttab " ???
+    set smarttab " use <shiftwidth> when using <Tab> in front of a line
 
 " Appearance
     " syntax highlighting on
