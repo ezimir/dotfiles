@@ -203,8 +203,21 @@
         highlight ExtraWhitespace ctermbg=darkred guibg=darkred " name a new highlight group
         match ExtraWhitespace /\s\+$/ " show the group
 
-        " Remove trailing whitespace in files
-        au BufWritePre * :%s/\s\+$//e
+        " Whitespace stripping with cursor restoration
+        function! <SID>StripTrailing()
+            " save last search, and cursor position.
+            let _s=@/
+            let l = line(".")
+            let c = col(".")
+            " execute replace
+            %s/\s\+$//e
+            " restore previous search history, and cursor position
+            let @/=_s
+            call cursor(l, c)
+        endfunction
+
+        " Remove trailing whitespace before writing file
+        au BufWritePre * :call <SID>StripTrailing()
     endif " has('autocmd')
 
 " Plugin configuration
