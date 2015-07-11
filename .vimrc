@@ -75,6 +75,9 @@
     " change the mapleader from \ to ,
     let mapleader=","
 
+    " reload .vimrc
+    nnoremap <leader>v :source $MYVIMRC<CR>
+
     " fast saving
     nmap <leader>w :w!<cr>
 
