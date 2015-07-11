@@ -30,8 +30,7 @@
     Plugin 'itchyny/lightline.vim'
 
     " code snippet autoexpansion
-    Plugin 'mattn/emmet-vim'
-    Plugin 'mattn/webapi-vim'
+    Plugin 'SirVer/ultisnips'
 
     call vundle#end()
 
@@ -293,12 +292,9 @@
         \   },
         \}
 
-    " set emmet expansion shortcut
-    let g:user_emmet_leader_key = '<C-E>'
+    " set snippet expansion shortcut
+    let g:UltiSnipsExpandTrigger="<Tab>"
+    let g:UltiSnipsJumpForwardTrigger="<C-N>"
+    let g:UltiSnipsJumpBackwardTrigger="<C-P>"
 
-    " use single key to invoke emmet expansion
-    imap <C-Z> <C-E>,
-
-    " load custom emmet settings
-    let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/snippets.json')), "\n"))
 
