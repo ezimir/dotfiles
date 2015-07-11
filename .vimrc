@@ -32,6 +32,9 @@
     " code snippet autoexpansion
     Plugin 'SirVer/ultisnips'
 
+    " CSS like syntax for creating HTML
+    Plugin 'rstacruz/sparkup'
+
     call vundle#end()
 
 " General
@@ -297,4 +300,6 @@
     let g:UltiSnipsJumpForwardTrigger="<C-N>"
     let g:UltiSnipsJumpBackwardTrigger="<C-P>"
 
+    " set shorcut for CSS syntax->HTML expansion
+    let g:sparkupExecuteMapping='<C-Z>'
 
