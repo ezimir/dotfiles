@@ -35,6 +35,9 @@
     " CSS like syntax for creating HTML
     Plugin 'rstacruz/sparkup'
 
+    " surrounding movements/actions
+    Plugin 'tpope/vim-surround'
+
     call vundle#end()
 
 " General
