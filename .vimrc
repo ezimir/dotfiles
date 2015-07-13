@@ -107,6 +107,10 @@
     nnoremap g* g*zz
     nnoremap g# g#zz
 
+    " keep visual block selected after indenting it
+    vnoremap < <gv
+    vnoremap > >gv
+
 " Interface
     " don't redraw while executing macros (good performance config)
     set lazyredraw
