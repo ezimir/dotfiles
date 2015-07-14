@@ -111,6 +111,37 @@
     vnoremap < <gv
     vnoremap > >gv
 
+    " tab navigation
+    if has('gui_running')
+        noremap <silent> <D-S-Left> :tabprevious<CR>
+        noremap <silent> <D-S-Right> :tabnext<CR>
+    else
+        noremap <silent> <S-Left> :tabprevious<CR>
+        noremap <silent> <S-Right> :tabnext<CR>
+    endif
+
+    " tab movement
+    if has('gui_running')
+        function! MoveTabLeft()
+            let tabnr = tabpagenr()
+            execute "tabmove " . (tabnr - 2)
+            if tabnr == tabpagenr()
+                tabmove
+            endif
+        endfunction
+
+        function! MoveTabRight()
+            let tabnr = tabpagenr()
+            execute "tabmove " . (tabnr + 1)
+            if tabnr == tabpagenr()
+                tabmove 0
+            endif
+        endfunction
+
+        noremap <silent> <D-S-A-Left> :call MoveTabLeft()<CR>
+        noremap <silent> <D-S-A-Right> :call MoveTabRight()<CR>
+    endif
+
 " Interface
     " don't redraw while executing macros (good performance config)
     set lazyredraw
@@ -179,33 +210,9 @@
     endif
 
     " assuming MacVim
-    if has('gui')
+    if has('gui_running')
         " make window semitransparent
         set transparency=7
-
-        " tab navigation
-        noremap <silent> <D-S-Left> :tabprevious<CR>
-        noremap <silent> <D-S-Right> :tabnext<CR>
-
-        " tab movement
-        function! MoveTabLeft()
-            let tabnr = tabpagenr()
-            execute "tabmove " . (tabnr - 2)
-            if tabnr == tabpagenr()
-                tabmove
-            endif
-        endfunction
-
-        function! MoveTabRight()
-            let tabnr = tabpagenr()
-            execute "tabmove " . (tabnr + 1)
-            if tabnr == tabpagenr()
-                tabmove 0
-            endif
-        endfunction
-
-        noremap <silent> <D-S-A-Left> :call MoveTabLeft()<CR>
-        noremap <silent> <D-S-A-Right> :call MoveTabRight()<CR>
     endif
 
     " autocompletion colors (popup menu)
