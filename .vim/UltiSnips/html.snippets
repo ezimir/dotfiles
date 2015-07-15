@@ -1,4 +1,6 @@
 
+# elements
+
 snippet css "Stylesheet Link" b
 <link rel="stylesheet" href="${1:URL}">
 endsnippet
@@ -30,5 +32,20 @@ snippet html "Minimal HTML5 document" b
     ${2:HTML}
 </body>
 </html>
+endsnippet
+
+# attributes
+
+global !p
+def within_tag():
+    return re.search('<[^<>]+$', buffer[line - 1][:column])
+endglobal
+
+snippet c "Class" "within_tag()" e
+class="${1:class-name}"
+endsnippet
+
+snippet i "Id" "within_tag()" e
+id="${1:id}"
 endsnippet
 
