@@ -221,6 +221,9 @@
     highlight PmenuSbar ctermbg=238 guibg=#444444
     highlight PmenuThumb ctermbg=249 guibg=#aaaaaa
 
+    " display name of syntax group for word under cursor
+    nmap <leader>sg :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
+
 " Auto commands
     if has('autocmd')
         " highlight trailing whitespace
