@@ -81,7 +81,7 @@
     let mapleader=","
 
     " reload .vimrc
-    nnoremap <leader>v :source $MYVIMRC<CR>
+    nnoremap <silent> <leader>v :source $MYVIMRC<CR>:call lightline#update()<CR>
 
     " fast saving
     nmap <leader>w :w!<cr>
