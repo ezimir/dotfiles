@@ -1,0 +1,9 @@
+/*
+    File should be linked to ~/Library/KeyBindings/DefaultKeyBinding.dict
+*/
+{
+    "~[" = ("insertText:", "‘");
+    "~]" = ("insertText:", "’");
+    "~{" = ("insertText:", "“");
+    "~}" = ("insertText:", "”");
+}
