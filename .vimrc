@@ -246,7 +246,7 @@
     highlight CursorLine guibg=#35322d
 
     " display name of syntax group for word under cursor
-    nnoremap <leader>sg :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
+    nnoremap <leader>sg :echom synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 
 " Auto commands
     if has('autocmd')
