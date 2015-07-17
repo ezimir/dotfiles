@@ -114,12 +114,12 @@
     vnoremap < <gv
     vnoremap > >gv
 
-    if has('gui_running')
-        " tab navigation
-        nnoremap <silent> <D-S-Left> :tabprevious<CR>
-        nnoremap <silent> <D-S-Right> :tabnext<CR>
+    " tab navigation
+    nnoremap <silent> <S-Left> :tabprevious<CR>
+    nnoremap <silent> <S-Right> :tabnext<CR>
 
-        " tab movement
+    " tab movement
+    "if has('gui_running')
         function! MoveTabLeft()
             let tabnr = tabpagenr()
             execute "tabmove " . (tabnr - 2)
@@ -135,13 +135,9 @@
             endif
         endfunction
 
-        nnoremap <silent> <D-S-A-Left> :call MoveTabLeft()<CR>
-        nnoremap <silent> <D-S-A-Right> :call MoveTabRight()<CR>
-    else
-        " tab navigation
-        nnoremap <silent> <S-Left> :tabprevious<CR>
-        nnoremap <silent> <S-Right> :tabnext<CR>
-    endif " has('gui_running')
+        nnoremap <silent> <S-A-Left> :call MoveTabLeft()<CR>
+        nnoremap <silent> <S-A-Right> :call MoveTabRight()<CR>
+    "endif " has('gui_running')
 
     " tagbar toggle
     nnoremap <silent> <leader>t :TagbarToggle<CR>
