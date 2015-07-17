@@ -114,17 +114,12 @@
     vnoremap < <gv
     vnoremap > >gv
 
-    " tab navigation
     if has('gui_running')
+        " tab navigation
         nnoremap <silent> <D-S-Left> :tabprevious<CR>
         nnoremap <silent> <D-S-Right> :tabnext<CR>
-    else
-        nnoremap <silent> <S-Left> :tabprevious<CR>
-        nnoremap <silent> <S-Right> :tabnext<CR>
-    endif
 
-    " tab movement
-    if has('gui_running')
+        " tab movement
         function! MoveTabLeft()
             let tabnr = tabpagenr()
             execute "tabmove " . (tabnr - 2)
@@ -132,7 +127,6 @@
                 tabmove
             endif
         endfunction
-
         function! MoveTabRight()
             let tabnr = tabpagenr()
             execute "tabmove " . (tabnr + 1)
@@ -143,10 +137,25 @@
 
         nnoremap <silent> <D-S-A-Left> :call MoveTabLeft()<CR>
         nnoremap <silent> <D-S-A-Right> :call MoveTabRight()<CR>
-    endif
+    else
+        " tab navigation
+        nnoremap <silent> <S-Left> :tabprevious<CR>
+        nnoremap <silent> <S-Right> :tabnext<CR>
+    endif " has('gui_running')
 
     " tagbar toggle
     nnoremap <silent> <leader>t :TagbarToggle<CR>
+
+    " toggle location list (via detecting if number of opened windows changed)
+    function! ToggleLocationList()
+        let win_count = winnr('$') " save number of opened windows
+        lclose " try to close location list
+        if win_count == winnr('$') " if number of opened windows didn't change
+            Errors " nothing was closed, we can open error list
+        endif
+    endfunction
+    nnoremap <silent> <leader>e :call ToggleLocationList()<cr>
+
 
 " Interface
     " don't redraw while executing macros (good performance config)
@@ -282,17 +291,6 @@
     let g:syntastic_always_populate_loc_list = 1 " add errors to location list
     let g:syntastic_check_on_open = 1 " check when opening file
     let g:syntastic_check_on_wq = 0 " don't check when quitting (not going to see it)
-
-    " custom function for toggling :Errors location list
-    function! ToggleErrors()
-        let win_count = winnr('$') " save number of opened windows
-        lclose " try to close location list
-        if win_count == winnr('$') " if number of opened windows didn't change
-            Errors " nothing was closed, we can open error list
-        endif
-    endfunction
-
-    nnoremap <silent> <leader>e :call ToggleErrors()<cr>
 
     " ignore pattern (never want to open these, no sense to list them)
     let g:ctrlp_custom_ignore = {
