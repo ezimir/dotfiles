@@ -87,7 +87,7 @@
     nnoremap <silent> <leader>v :source $MYVIMRC<CR>:call lightline#update()<CR>
 
     " fast saving
-    nmap <leader>w :w!<cr>
+    nnoremap <leader>w :w!<cr>
 
     " deselect last search query
     nnoremap <silent> <leader>/ :nohlsearch<CR>
@@ -99,8 +99,8 @@
     set mouse=a
 
     " error list navigation
-    nmap <silent> ]e :lnext<CR>
-    nmap <silent> [e :lprev<CR>
+    nnoremap <silent> ]e :lnext<CR>
+    nnoremap <silent> [e :lprev<CR>
 
     " keep search results in the middle of the screen
     nnoremap n nzz
@@ -116,11 +116,11 @@
 
     " tab navigation
     if has('gui_running')
-        noremap <silent> <D-S-Left> :tabprevious<CR>
-        noremap <silent> <D-S-Right> :tabnext<CR>
+        nnoremap <silent> <D-S-Left> :tabprevious<CR>
+        nnoremap <silent> <D-S-Right> :tabnext<CR>
     else
-        noremap <silent> <S-Left> :tabprevious<CR>
-        noremap <silent> <S-Right> :tabnext<CR>
+        nnoremap <silent> <S-Left> :tabprevious<CR>
+        nnoremap <silent> <S-Right> :tabnext<CR>
     endif
 
     " tab movement
@@ -141,8 +141,8 @@
             endif
         endfunction
 
-        noremap <silent> <D-S-A-Left> :call MoveTabLeft()<CR>
-        noremap <silent> <D-S-A-Right> :call MoveTabRight()<CR>
+        nnoremap <silent> <D-S-A-Left> :call MoveTabLeft()<CR>
+        nnoremap <silent> <D-S-A-Right> :call MoveTabRight()<CR>
     endif
 
     " tagbar toggle
@@ -246,12 +246,12 @@
     highlight CursorLine guibg=#35322d
 
     " display name of syntax group for word under cursor
-    nmap <leader>sg :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
+    nnoremap <leader>sg :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 
 " Auto commands
     if has('autocmd')
         " whitespace stripping with cursor restoration
-        function! <SID>StripTrailing()
+        function! StripTrailing()
             " save last search, and cursor position.
             let _s=@/
             let l = line(".")
@@ -264,7 +264,7 @@
         endfunction
 
         " remove trailing whitespace before writing file
-        au BufWritePre * :call <SID>StripTrailing()
+        au BufWritePre * :call StripTrailing()
 
         " open tagbar window for appropriate files
         au FileType vim,python,javascript :TagbarOpen
@@ -292,7 +292,7 @@
         endif
     endfunction
 
-    noremap <silent> <leader>e :call ToggleErrors()<cr>
+    nnoremap <silent> <leader>e :call ToggleErrors()<cr>
 
     " ignore pattern (never want to open these, no sense to list them)
     let g:ctrlp_custom_ignore = {
