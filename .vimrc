@@ -38,6 +38,9 @@
     " surrounding movements/actions
     Plugin 'tpope/vim-surround'
 
+    " list of variables/functions in current buffer
+    Plugin 'majutsushi/tagbar'
+
     call vundle#end()
 
 " General
@@ -141,6 +144,9 @@
         noremap <silent> <D-S-A-Left> :call MoveTabLeft()<CR>
         noremap <silent> <D-S-A-Right> :call MoveTabRight()<CR>
     endif
+
+    " tagbar toggle
+    nnoremap <silent> <leader>t :TagbarToggle<CR>
 
 " Interface
     " don't redraw while executing macros (good performance config)
@@ -256,6 +262,10 @@
 
         " remove trailing whitespace before writing file
         au BufWritePre * :call <SID>StripTrailing()
+
+        " open tagbar window for appropriate files
+        au FileType vim,python,javascript :TagbarOpen
+
     endif " has('autocmd')
 
 " Plugin configuration
