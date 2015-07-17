@@ -223,6 +223,9 @@
     if has('gui_running')
         " make window semitransparent
         set transparency=7
+
+        " don't display scrollbar on left (happens with splits)
+        set guioptions-=L
     endif
 
     " highlight trailing whitespace
