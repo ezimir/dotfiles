@@ -201,8 +201,12 @@
     syntax on
 
     " simple dark scheme
-    set background=dark
-    colorscheme desert
+    colorscheme badwolf
+
+    " revert CSS colors set by badwolf to 'cssProp' (which each prop links to)
+    for group in ['cssColorProp', 'cssBoxProp', 'cssTextProp', 'cssRenderProp', 'cssGeneratedContentProp']
+        execute 'hi clear ' . group
+    endfor
 
     " if possible, use nicer font
     if &t_Co >= 256 || has('gui_running')
@@ -215,11 +219,18 @@
         set transparency=7
     endif
 
-    " autocompletion colors (popup menu)
-    highlight Pmenu ctermbg=0 ctermfg=7 guibg=#222222 guifg=#e5e5e5
-    highlight PmenuSel ctermbg=7 ctermfg=0 guibg=#e5e5e5 guifg=#222222
-    highlight PmenuSbar ctermbg=238 guibg=#444444
-    highlight PmenuThumb ctermbg=249 guibg=#aaaaaa
+    " indent highlighting
+    let g:indent_guides_enable_on_vim_startup = 1 " auto enable
+    let g:indent_guides_start_level = 2 " don't highlight column 0
+    let g:indent_guides_guide_size = 1 " highlight 1 column wide
+
+    " indent line colors
+    let g:indent_guides_auto_colors = 0 " disable color detection
+    highlight IndentGuidesOdd  guibg=#2a2a2a ctermbg=234
+    highlight IndentGuidesEven guibg=#333333 ctermbg=235
+
+    " cursor line needs more contrast
+    highlight CursorLine guibg=#35322d
 
     " display name of syntax group for word under cursor
     nmap <leader>sg :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
@@ -248,11 +259,6 @@
     endif " has('autocmd')
 
 " Plugin configuration
-    " indent highlighting
-    let g:indent_guides_enable_on_vim_startup = 1 " auto enable
-    let g:indent_guides_start_level = 2 " don't highlight column 0
-    let g:indent_guides_guide_size = 1 " highlight 1 column wide
-
     " syntax errors
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
