@@ -219,6 +219,10 @@
         set transparency=7
     endif
 
+    " highlight trailing whitespace
+    highlight ExtraWhitespace ctermbg=darkred guibg=darkred " name a new highlight group
+    match ExtraWhitespace /\s\+$/ " show the group
+
     " indent highlighting
     let g:indent_guides_enable_on_vim_startup = 1 " auto enable
     let g:indent_guides_start_level = 2 " don't highlight column 0
@@ -237,11 +241,7 @@
 
 " Auto commands
     if has('autocmd')
-        " highlight trailing whitespace
-        highlight ExtraWhitespace ctermbg=darkred guibg=darkred " name a new highlight group
-        match ExtraWhitespace /\s\+$/ " show the group
-
-        " Whitespace stripping with cursor restoration
+        " whitespace stripping with cursor restoration
         function! <SID>StripTrailing()
             " save last search, and cursor position.
             let _s=@/
@@ -254,7 +254,7 @@
             call cursor(l, c)
         endfunction
 
-        " Remove trailing whitespace before writing file
+        " remove trailing whitespace before writing file
         au BufWritePre * :call <SID>StripTrailing()
     endif " has('autocmd')
 
