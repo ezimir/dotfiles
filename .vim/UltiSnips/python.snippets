@@ -1,4 +1,14 @@
 
+global !p
+from ultisnips import *
+endglobal
+
+
+snippet _i "__init__" "within_class(buffer, line)" eb
+def __init__(self${1:, *args, **kwargs}):
+    super(${2:`!p snip.rv = context`}, self).__init__(${1/,? ?(.*)/$1/})
+endsnippet
+
 snippet im "import module" b
 import ${1:module}
 endsnippet
@@ -9,5 +19,9 @@ endsnippet
 
 snippet pdb "Debugger breakpoint" b
 import pdb;pdb.set_trace()
+endsnippet
+
+snippet super "super" "within_method(buffer, line)" e
+super(${1:`!p snip.rv = context[0]`}, self).${2:`!p snip.rv = context[1]`}(${3:`!p snip.rv = context[2]`})
 endsnippet
 
