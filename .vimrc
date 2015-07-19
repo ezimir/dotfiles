@@ -38,6 +38,9 @@
     " surrounding movements/actions
     Plugin 'tpope/vim-surround'
 
+    " repeat plugin actions with '.'
+    Plugin 'tpope/vim-repeat'
+
     " list of variables/functions in current buffer
     Plugin 'majutsushi/tagbar'
 
