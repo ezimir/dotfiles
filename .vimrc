@@ -86,8 +86,11 @@
     " change the mapleader from \ to ,
     let mapleader=","
 
+    " open .vimrc in new tab (for quick edits)
+    nnoremap <leader>ve :tabe $MYVIMRC<CR>
+
     " reload .vimrc
-    nnoremap <silent> <leader>v :source $MYVIMRC<CR>:call lightline#update()<CR>
+    nnoremap <silent> <leader>vr :source $MYVIMRC<CR>:call lightline#update()<CR>
 
     " fast saving
     nnoremap <leader>w :w!<cr>
