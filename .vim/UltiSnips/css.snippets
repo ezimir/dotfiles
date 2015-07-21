@@ -1,3 +1,4 @@
+
 global !p
 from ultisnips import *
 endglobal
@@ -5,6 +6,10 @@ endglobal
 
 snippet c "Color" b
 color: ${1:#fff};
+endsnippet
+
+snippet di "Display" b
+display: ${1}`!p snip.rv = complete(t[1], ['inline-block', 'block', 'inline', 'none'])`;
 endsnippet
 
 snippet ff "Font Family" b
@@ -27,12 +32,14 @@ snippet ma "Margin: Auto"
 margin: 0 auto;
 endsnippet
 
-snippet pos "Position" b
-position: ${1:relative};
 endsnippet
 
-snippet posa "Position Absolute" b
-position: ${1:absolute};
+snippet ov "Overflow" b
+overflow: ${1}`!p snip.rv = complete(t[1], ['hidden', 'visible', 'scroll'])`;
+endsnippet
+
+snippet pos "Position" b
+position: ${1}`!p snip.rv = complete(t[1], ['relative', 'absolute', 'fixed', 'static'])`;
 endsnippet
 
 snippet ta "Text Align" b
