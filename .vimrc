@@ -281,11 +281,6 @@
     endif " has('autocmd')
 
 " Plugin configuration
-    " syntax errors
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-
     let g:syntastic_stl_format = '[%E{E#%e}%B{, }%W{W#%w}]'
 
     let g:syntastic_always_populate_loc_list = 1 " add errors to location list
@@ -324,13 +319,13 @@
     let g:lightline = {
         \   'active': {
         \       'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ],
-        \       'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype' ], [ 'syntastic' ] ],
-        \   },
-        \   'component_expand': {
-        \       'syntastic': 'SyntasticStatuslineFlag',
+        \       'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype', 'syntastic' ] ],
         \   },
         \   'component_type': {
         \       'syntastic': 'error',
+        \   },
+        \   'component_expand': {
+        \       'syntastic': 'SyntasticStatuslineFlag',
         \   },
         \   'component': {
         \       'readonly': '%{&readonly?"⭤":""}',
