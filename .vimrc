@@ -125,25 +125,23 @@
     nnoremap <silent> <S-Right> :tabnext<CR>
 
     " tab movement
-    "if has('gui_running')
-        function! MoveTabLeft()
-            let tabnr = tabpagenr()
-            execute "tabmove " . (tabnr - 2)
-            if tabnr == tabpagenr()
-                tabmove
-            endif
-        endfunction
-        function! MoveTabRight()
-            let tabnr = tabpagenr()
-            execute "tabmove " . (tabnr + 1)
-            if tabnr == tabpagenr()
-                tabmove 0
-            endif
-        endfunction
+    function! MoveTabLeft()
+        let tabnr = tabpagenr()
+        execute "tabmove " . (tabnr - 2)
+        if tabnr == tabpagenr()
+            tabmove
+        endif
+    endfunction
+    function! MoveTabRight()
+        let tabnr = tabpagenr()
+        execute "tabmove " . (tabnr + 1)
+        if tabnr == tabpagenr()
+            tabmove 0
+        endif
+    endfunction
 
-        nnoremap <silent> <S-A-Left> :call MoveTabLeft()<CR>
-        nnoremap <silent> <S-A-Right> :call MoveTabRight()<CR>
-    "endif " has('gui_running')
+    nnoremap <silent> <S-A-Left> :call MoveTabLeft()<CR>
+    nnoremap <silent> <S-A-Right> :call MoveTabRight()<CR>
 
     " tagbar toggle
     nnoremap <silent> <leader>t :TagbarToggle<CR>
