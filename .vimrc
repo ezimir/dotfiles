@@ -218,9 +218,10 @@
     " simple dark scheme
     colorscheme badwolf
 
-    " revert CSS colors set by badwolf to 'cssProp' (which each prop links to)
+    " revert CSS colors set by badwolf to 'cssProp'
     for group in ['cssColorProp', 'cssBoxProp', 'cssTextProp', 'cssRenderProp', 'cssGeneratedContentProp']
         execute 'hi clear ' . group
+        execute 'hi link ' . group . ' cssProp'
     endfor
 
     " if possible, use nicer font
