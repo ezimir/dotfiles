@@ -2,13 +2,23 @@
 " syntax error checks
 Plugin 'scrooloose/syntastic'
 
+" statusline string format: 'E#3 W#5'
 let g:syntastic_stl_format = '[%E{E#%e}%B{, }%W{W#%w}]'
 
-let g:syntastic_always_populate_loc_list = 1 " add errors to location list
-let g:syntastic_check_on_open = 1 " check when opening file
-let g:syntastic_check_on_wq = 0 " don't check when quitting (not going to see it)
+" add errors to location list
+let g:syntastic_always_populate_loc_list = 1
+
+" don't check when quitting (not going to see it)
+let g:syntastic_check_on_wq = 0
+
 " disable automatic error detection
 let b:syntastic_mode = 'passive'
+
+" in case mode is active, following is useful:
+if !exists('b:syntastic_mode')
+    " check when opening file
+    let g:syntastic_check_on_open = 1
+endif
 
 
 " detect errors and update statusline
