@@ -46,6 +46,7 @@ if has('autocmd')
     augroup Syntastic
         au!
         au BufWritePost * call Syntastic()
+        au BufReadPost * call Syntastic()
     augroup END
 endif
 
