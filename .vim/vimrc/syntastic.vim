@@ -38,8 +38,10 @@ function! ToggleLocationList()
     endif
 endfunction
 
+" set mapping for location list toggle
 nnoremap <silent> <leader>e :call ToggleLocationList()<cr>
 
+" autoupdate error list and statusline on file save
 if has('autocmd')
     augroup Syntastic
         au!
