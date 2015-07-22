@@ -1,49 +1,4 @@
 
-" Plugin Manager
-    " required for Vundle
-    set nocompatible
-    filetype off
-
-    " set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-
-    " let Vundle manage Vundle, required
-    Plugin 'gmarik/Vundle.vim'
-
-    for filename in split(glob('~/.vim/vimrc/*.vim'), '\n')
-        exe 'source' filename
-    endfor
-
-    " autocompletion using <Tab>
-    Plugin 'ervandew/supertab'
-
-    " comment/uncomment whole blocks
-    Plugin 'tpope/vim-commentary'
-
-    " easy file opening
-    Plugin 'kien/ctrlp.vim'
-
-    " nicer statusline
-    Plugin 'itchyny/lightline.vim'
-
-    " code snippet autoexpansion
-    Plugin 'SirVer/ultisnips'
-
-    " CSS like syntax for creating HTML
-    Plugin 'rstacruz/sparkup'
-
-    " surrounding movements/actions
-    Plugin 'tpope/vim-surround'
-
-    " repeat plugin actions with '.'
-    Plugin 'tpope/vim-repeat'
-
-    " list of variables/functions in current buffer
-    Plugin 'majutsushi/tagbar'
-
-    call vundle#end()
-
 " General
     " explicitly get out of vi-compatible mode (use vim-defaults instead of vi-defaults (easier, more user friendly))
     set nocompatible
@@ -269,8 +224,51 @@
 
     endif " has('autocmd')
 
+" Plugin Manager
+    " required for Vundle
+    "filetype off
 
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
 
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+
+    for filename in split(glob('~/.vim/vimrc/*.vim'), '\n')
+        exe 'source' filename
+    endfor
+
+    " autocompletion using <Tab>
+    Plugin 'ervandew/supertab'
+
+    " comment/uncomment whole blocks
+    Plugin 'tpope/vim-commentary'
+
+    " easy file opening
+    Plugin 'kien/ctrlp.vim'
+
+    " nicer statusline
+    Plugin 'itchyny/lightline.vim'
+
+    " code snippet autoexpansion
+    Plugin 'SirVer/ultisnips'
+
+    " CSS like syntax for creating HTML
+    Plugin 'rstacruz/sparkup'
+
+    " surrounding movements/actions
+    Plugin 'tpope/vim-surround'
+
+    " repeat plugin actions with '.'
+    Plugin 'tpope/vim-repeat'
+
+    " list of variables/functions in current buffer
+    Plugin 'majutsushi/tagbar'
+
+    call vundle#end()
+
+" Plugin configuration
     " ignore pattern (never want to open these, no sense to list them)
     let g:ctrlp_custom_ignore = {
         \   'file': '\.pyc$\|\.png$\|\.jpg$\|\.gif$',
