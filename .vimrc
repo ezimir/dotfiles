@@ -99,17 +99,6 @@
     " tagbar toggle
     nnoremap <silent> <leader>t :TagbarToggle<CR>
 
-    " toggle location list (via detecting if number of opened windows changed)
-    function! ToggleLocationList()
-        let win_count = winnr('$') " save number of opened windows
-        lclose " try to close location list
-        if win_count == winnr('$') " if number of opened windows didn't change
-            Errors " nothing was closed, we can open error list
-        endif
-    endfunction
-    nnoremap <silent> <leader>e :call ToggleLocationList()<cr>
-
-
 " Interface
     " don't redraw while executing macros (good performance config)
     set lazyredraw

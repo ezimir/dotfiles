@@ -17,6 +17,19 @@ function! Syntastic()
     call lightline#update()
 endfunction
 
+" toggle location list (via detecting if number of opened windows changed)
+function! ToggleLocationList()
+    call Syntastic()
+
+    let win_count = winnr('$') " save number of opened windows
+    lclose " try to close location list
+    if win_count == winnr('$') " if number of opened windows didn't change
+        Errors " nothing was closed, we can open error list
+    endif
+endfunction
+
+nnoremap <silent> <leader>e :call ToggleLocationList()<cr>
+
 if has('autocmd')
     augroup Syntastic
         au!
