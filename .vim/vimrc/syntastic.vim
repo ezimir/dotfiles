@@ -45,8 +45,8 @@ nnoremap <silent> <leader>e :call ToggleLocationList()<cr>
 if has('autocmd')
     augroup Syntastic
         au!
-        au BufWritePost * call Syntastic()
-        au BufReadPost * call Syntastic()
+        au BufWritePost *.{py,html} call Syntastic()
+        au FileType python,html call Syntastic()
     augroup END
 endif
 
