@@ -12,7 +12,10 @@ def complete(tabstop, options):
     if len(options) == 1:
         return options[0]
 
-    return '({options})'.format(options = '|'.join(options))
+    elif not options:
+        return u''
+
+    return u'({options})'.format(options = '|'.join(options))
 
 
 def within_class(buffer, line):
