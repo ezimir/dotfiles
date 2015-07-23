@@ -31,9 +31,6 @@
     " support all three, in this order
     set fileformats=unix,dos,mac
 
-    " enable filetype plugins (auto completion and indentation support)
-    filetype plugin on
-    filetype indent on
 
 " Interaction/Mapping
     " change the mapleader from \ to ,
@@ -132,6 +129,7 @@
     " configure backspace so it acts as it should act
     set backspace=eol,start,indent " positions where to allow backspace
 
+
 " Editing
     " dont wrap lines
     set nowrap
@@ -153,7 +151,55 @@
     set smartindent " ???
     set smarttab " use <shiftwidth> when using <Tab> in front of a line
 
+" Plugin Manager
+    " required for Vundle
+    filetype off
+
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+
+    for filename in split(glob('~/.vim/vimrc/*.vim'), '\n')
+        exe 'source' filename
+    endfor
+
+    " autocompletion using <Tab>
+    Plugin 'ervandew/supertab'
+
+    " comment/uncomment whole blocks
+    Plugin 'tpope/vim-commentary'
+
+    " easy file opening
+    Plugin 'kien/ctrlp.vim'
+
+    " nicer statusline
+    Plugin 'itchyny/lightline.vim'
+
+    " code snippet autoexpansion
+    Plugin 'SirVer/ultisnips'
+
+    " CSS like syntax for creating HTML
+    Plugin 'rstacruz/sparkup'
+
+    " surrounding movements/actions
+    Plugin 'tpope/vim-surround'
+
+    " repeat plugin actions with '.'
+    Plugin 'tpope/vim-repeat'
+
+    " list of variables/functions in current buffer
+    Plugin 'majutsushi/tagbar'
+
+    call vundle#end()
+
 " Appearance
+    " enable filetype plugins (auto completion and indentation support)
+    filetype plugin on
+    filetype indent on
+
     " syntax highlighting on
     syntax on
 
@@ -212,50 +258,6 @@
         au FileType vim,python,javascript :TagbarOpen
 
     endif " has('autocmd')
-
-" Plugin Manager
-    " required for Vundle
-    "filetype off
-
-    " set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-
-    " let Vundle manage Vundle, required
-    Plugin 'gmarik/Vundle.vim'
-
-    for filename in split(glob('~/.vim/vimrc/*.vim'), '\n')
-        exe 'source' filename
-    endfor
-
-    " autocompletion using <Tab>
-    Plugin 'ervandew/supertab'
-
-    " comment/uncomment whole blocks
-    Plugin 'tpope/vim-commentary'
-
-    " easy file opening
-    Plugin 'kien/ctrlp.vim'
-
-    " nicer statusline
-    Plugin 'itchyny/lightline.vim'
-
-    " code snippet autoexpansion
-    Plugin 'SirVer/ultisnips'
-
-    " CSS like syntax for creating HTML
-    Plugin 'rstacruz/sparkup'
-
-    " surrounding movements/actions
-    Plugin 'tpope/vim-surround'
-
-    " repeat plugin actions with '.'
-    Plugin 'tpope/vim-repeat'
-
-    " list of variables/functions in current buffer
-    Plugin 'majutsushi/tagbar'
-
-    call vundle#end()
 
 " Plugin configuration
     " ignore pattern (never want to open these, no sense to list them)
