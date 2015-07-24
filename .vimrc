@@ -31,6 +31,15 @@
     " support all three, in this order
     set fileformats=unix,dos,mac
 
+    " create a backup file when writing
+    set writebackup
+
+    " but don't keep it after write is done
+    set nobackup
+
+    " don't write swapfile
+    set noswapfile
+
 
 " Interaction/Mapping
     " change the mapleader from \ to ,
@@ -95,6 +104,7 @@
 
     " tagbar toggle
     nnoremap <silent> <leader>t :TagbarToggle<CR>
+
 
 " Interface
     " don't redraw while executing macros (good performance config)
@@ -258,6 +268,7 @@
         au FileType vim,python,javascript :TagbarOpen
 
     endif " has('autocmd')
+
 
 " Plugin configuration
     " ignore pattern (never want to open these, no sense to list them)
