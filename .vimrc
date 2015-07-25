@@ -263,10 +263,6 @@
 
         " remove trailing whitespace before writing file
         au BufWritePre * :call StripTrailing()
-
-        " open tagbar window for appropriate files
-        au FileType vim,python,javascript :TagbarOpen
-
     endif " has('autocmd')
 
 
