@@ -21,38 +21,38 @@
     " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
 
-    " syntax error checks
-    Plugin 'scrooloose/syntastic'
-
-    " displays vertical lines where indents are
-    Plugin 'nathanaelkane/vim-indent-guides'
-
-    " autocompletion using <Tab>
-    Plugin 'ervandew/supertab'
-
-    " comment/uncomment whole blocks
-    Plugin 'tpope/vim-commentary'
-
     " easy file opening
     Plugin 'kien/ctrlp.vim'
 
     " nicer statusline
     Plugin 'itchyny/lightline.vim'
 
-    " code snippet autoexpansion
-    Plugin 'SirVer/ultisnips'
-
     " CSS like syntax for creating HTML
     Plugin 'rstacruz/sparkup'
 
-    " surrounding movements/actions
-    Plugin 'tpope/vim-surround'
+    " autocompletion using <Tab>
+    Plugin 'ervandew/supertab'
+
+    " syntax error checks
+    Plugin 'scrooloose/syntastic'
+
+    " list of variables/functions in current buffer
+    Plugin 'majutsushi/tagbar'
+
+    " code snippet autoexpansion
+    Plugin 'SirVer/ultisnips'
+
+    " comment/uncomment whole blocks
+    Plugin 'tpope/vim-commentary'
+
+    " displays vertical lines where indents are
+    Plugin 'nathanaelkane/vim-indent-guides'
 
     " repeat plugin actions with '.'
     Plugin 'tpope/vim-repeat'
 
-    " list of variables/functions in current buffer
-    Plugin 'majutsushi/tagbar'
+    " surrounding movements/actions
+    Plugin 'tpope/vim-surround'
 
     call vundle#end()
 
