@@ -10,6 +10,53 @@
     set encoding=utf-8 " charset used by Vim to represent data in memory
 
 
+" Plugin Manager
+    " required for Vundle
+    filetype off
+
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+
+    " syntax error checks
+    Plugin 'scrooloose/syntastic'
+
+    " displays vertical lines where indents are
+    Plugin 'nathanaelkane/vim-indent-guides'
+
+    " autocompletion using <Tab>
+    Plugin 'ervandew/supertab'
+
+    " comment/uncomment whole blocks
+    Plugin 'tpope/vim-commentary'
+
+    " easy file opening
+    Plugin 'kien/ctrlp.vim'
+
+    " nicer statusline
+    Plugin 'itchyny/lightline.vim'
+
+    " code snippet autoexpansion
+    Plugin 'SirVer/ultisnips'
+
+    " CSS like syntax for creating HTML
+    Plugin 'rstacruz/sparkup'
+
+    " surrounding movements/actions
+    Plugin 'tpope/vim-surround'
+
+    " repeat plugin actions with '.'
+    Plugin 'tpope/vim-repeat'
+
+    " list of variables/functions in current buffer
+    Plugin 'majutsushi/tagbar'
+
+    call vundle#end()
+
+
 " Environment
     " sets how many lines of history VIM has to remember
     set history=1000
@@ -22,6 +69,10 @@
 
 
 " File Handling
+    " enable filetype plugins (auto completion and indentation support)
+    filetype plugin on
+    filetype indent on
+
     " set to auto read when a file is changed from the outside
     set autoread
 
@@ -161,55 +212,8 @@
     set smartindent " ???
     set smarttab " use <shiftwidth> when using <Tab> in front of a line
 
-" Plugin Manager
-    " required for Vundle
-    filetype off
-
-    " set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-
-    " let Vundle manage Vundle, required
-    Plugin 'gmarik/Vundle.vim'
-
-    for filename in split(glob('~/.vim/vimrc/*.vim'), '\n')
-        exe 'source' filename
-    endfor
-
-    " autocompletion using <Tab>
-    Plugin 'ervandew/supertab'
-
-    " comment/uncomment whole blocks
-    Plugin 'tpope/vim-commentary'
-
-    " easy file opening
-    Plugin 'kien/ctrlp.vim'
-
-    " nicer statusline
-    Plugin 'itchyny/lightline.vim'
-
-    " code snippet autoexpansion
-    Plugin 'SirVer/ultisnips'
-
-    " CSS like syntax for creating HTML
-    Plugin 'rstacruz/sparkup'
-
-    " surrounding movements/actions
-    Plugin 'tpope/vim-surround'
-
-    " repeat plugin actions with '.'
-    Plugin 'tpope/vim-repeat'
-
-    " list of variables/functions in current buffer
-    Plugin 'majutsushi/tagbar'
-
-    call vundle#end()
 
 " Appearance
-    " enable filetype plugins (auto completion and indentation support)
-    filetype plugin on
-    filetype indent on
-
     " syntax highlighting on
     syntax on
 
@@ -319,4 +323,9 @@
 
     " set shorcut for CSS syntax->HTML expansion
     let g:sparkupExecuteMapping='<C-Z>'
+
+" Load plugin configuration
+    for filename in split(glob('~/.vim/vimrc/*.vim'), '\n')
+        exe 'source' filename
+    endfor
 

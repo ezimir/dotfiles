@@ -1,7 +1,4 @@
 
-" syntax error checks
-Plugin 'scrooloose/syntastic'
-
 " statusline string format: 'E#3 W#5'
 let g:syntastic_stl_format = '[%E{E#%e}%B{, }%W{W#%w}]'
 

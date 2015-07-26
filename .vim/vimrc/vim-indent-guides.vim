@@ -1,7 +1,4 @@
 
-" displays vertical lines where indents are
-Plugin 'nathanaelkane/vim-indent-guides'
-
 " indent highlighting
 let g:indent_guides_enable_on_vim_startup = 1 " auto enable
 let g:indent_guides_start_level = 2 " don't highlight column 0
