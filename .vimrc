@@ -316,10 +316,6 @@
         \   },
         \}
 
-    " set snippet expansion shortcut
-    let g:UltiSnipsExpandTrigger="<Tab>"
-    let g:UltiSnipsJumpForwardTrigger="<C-N>"
-    let g:UltiSnipsJumpBackwardTrigger="<C-P>"
 
     " set shorcut for CSS syntax->HTML expansion
     let g:sparkupExecuteMapping='<C-Z>'
