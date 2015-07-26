@@ -252,21 +252,24 @@
 
 " Auto commands
     if has('autocmd')
-        " whitespace stripping with cursor restoration
-        function! StripTrailing()
-            " save last search, and cursor position.
-            let _s=@/
-            let l = line(".")
-            let c = col(".")
-            " execute replace
-            %s/\s\+$//e
-            " restore previous search history, and cursor position
-            let @/=_s
-            call cursor(l, c)
-        endfunction
+        augroup Trailing
+            au!
+            " whitespace stripping with cursor restoration
+            function! StripTrailing()
+                " save last search, and cursor position.
+                let _s=@/
+                let l = line(".")
+                let c = col(".")
+                " execute replace
+                %s/\s\+$//e
+                " restore previous search history, and cursor position
+                let @/=_s
+                call cursor(l, c)
+            endfunction
 
-        " remove trailing whitespace before writing file
-        au BufWritePre * :call StripTrailing()
+            " remove trailing whitespace before writing file
+            au BufWritePre * :call StripTrailing()
+        augroup END
     endif " has('autocmd')
 
 
