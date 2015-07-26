@@ -271,11 +271,6 @@
 
 
 " Plugin configuration
-
-    " set shorcut for CSS syntax->HTML expansion
-    let g:sparkupExecuteMapping='<C-Z>'
-
-" Load plugin configuration
     for filename in split(glob('~/.vim/vimrc/*.vim'), '\n')
         exe 'source' filename
     endfor
