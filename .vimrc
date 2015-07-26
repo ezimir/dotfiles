@@ -271,40 +271,6 @@
 
 
 " Plugin configuration
-    " disable status function in ctrlp
-    let g:ctrlp_status_func = {
-        \   'main': 'CtrlPStatusFuncMain',
-        \   'prog': 'CtrlPStatusFuncProg',
-        \}
-
-    function! CtrlPStatusFuncMain(focus, byfname, regex, prev, item, next, marked)
-        return lightline#statusline(0)
-    endfunction
-
-    function! CtrlPStatusFuncProg(str)
-        return lightline#statusline(0)
-    endfunction
-
-    " for statusline to always appear
-    set laststatus=2
-
-    " statusline configuration
-    let g:lightline = {
-        \   'active': {
-        \       'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ],
-        \       'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype', 'syntastic' ] ],
-        \   },
-        \   'component_type': {
-        \       'syntastic': 'error',
-        \   },
-        \   'component_expand': {
-        \       'syntastic': 'SyntasticStatuslineFlag',
-        \   },
-        \   'component': {
-        \       'readonly': '%{&readonly?"⭤":""}',
-        \   },
-        \}
-
 
     " set shorcut for CSS syntax->HTML expansion
     let g:sparkupExecuteMapping='<C-Z>'
