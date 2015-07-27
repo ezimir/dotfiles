@@ -94,7 +94,7 @@
 
 " Interaction/Mapping
     " change the mapleader from \ to ,
-    let mapleader=","
+    let mapleader="\<Space>"
 
     " open .vimrc in new tab (for quick edits)
     nnoremap <leader>ve :tabe $MYVIMRC<CR>
