@@ -103,7 +103,10 @@
     nnoremap <silent> <leader>vr :source $MYVIMRC<CR>:call lightline#update()<CR>
 
     " fast saving
-    nnoremap <leader>w :w!<cr>
+    nnoremap <leader>w :w!<CR>
+
+    " fast quitting
+    nnoremap <leader>q :q<CR>
 
     " deselect last search query
     nnoremap <silent> <leader>/ :nohlsearch<CR>
