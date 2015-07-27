@@ -96,6 +96,16 @@
     " change the mapleader from \ to ,
     let mapleader="\<Space>"
 
+    " disable arrow keys
+    inoremap <up> <nop>
+    inoremap <down> <nop>
+    inoremap <left> <nop>
+    inoremap <right> <nop>
+    nnoremap <up> <nop>
+    nnoremap <down> <nop>
+    nnoremap <left> <nop>
+    nnoremap <right> <nop>
+
     " open .vimrc in new tab (for quick edits)
     nnoremap <leader>ve :tabe $MYVIMRC<CR>
 
