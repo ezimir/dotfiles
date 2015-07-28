@@ -166,9 +166,6 @@
     nnoremap <silent> <S-A-Left> :call MoveTabLeft()<CR>
     nnoremap <silent> <S-A-Right> :call MoveTabRight()<CR>
 
-    " tagbar toggle
-    nnoremap <silent> <leader>t :TagbarToggle<CR>
-
 
 " Interface
     " don't redraw while executing macros (good performance config)
