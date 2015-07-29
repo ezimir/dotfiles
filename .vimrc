@@ -218,12 +218,12 @@
     " indentation
     set expandtab " turn a tabs into spaces
     set tabstop=4 " number of spaces a tab counts for
-    set softtabstop=4 " ???
-    set autoindent " insert indent when starting newline using o/O
+    set softtabstop=4 " number of spaces <Tab> counts for in insert mode
     set shiftwidth=4 " spaces for autoindents
-    set copyindent " copy the previous indentation on autoindenting
     set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
-    set smartindent " ???
+    set autoindent " insert indent when starting newline using o/O
+    set copyindent " copy the previous indentation on autoindenting
+    set smartindent " do smart indenting when starting a new line
     set smarttab " use <shiftwidth> when using <Tab> in front of a line
 
 
