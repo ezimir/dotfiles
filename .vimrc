@@ -284,6 +284,12 @@
             " remove trailing whitespace before writing file
             au BufWritePre * :call StripTrailing()
         augroup END
+
+        augroup LineNumbers
+            au!
+            au InsertEnter * :set norelativenumber
+            au InsertLeave * :set relativenumber
+        augroup END
     endif " has('autocmd')
 
 
