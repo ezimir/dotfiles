@@ -27,6 +27,9 @@
     " nicer statusline
     Plugin 'itchyny/lightline.vim'
 
+    " display nested parentheses with different colors
+    Plugin 'junegunn/rainbow_parentheses.vim'
+
     " CSS like syntax for creating HTML
     Plugin 'rstacruz/sparkup'
 
