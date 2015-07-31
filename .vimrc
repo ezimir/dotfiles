@@ -275,8 +275,15 @@
     if has('autocmd')
         augroup Trailing
             au!
+
+            let g:trailing_filetype_blacklist=['diff']
+
             " whitespace stripping with cursor restoration
             function! StripTrailing()
+                if index(g:trailing_filetype_blacklist, &filetype) > -1
+                    return
+                endif
+
                 " save last search, and cursor position.
                 let _s=@/
                 let l = line(".")
