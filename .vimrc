@@ -297,6 +297,11 @@
             au InsertEnter * :set norelativenumber
             au InsertLeave * :set relativenumber
         augroup END
+
+        augroup CommitEditor
+            au!
+            au FileType hgcommit,gitcommit set textwidth=72
+        augroup END
     endif " has('autocmd')
 
 
