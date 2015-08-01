@@ -221,6 +221,7 @@
     set incsearch " search incremently (search while typing)
     set ignorecase " case insensitive searching
     set smartcase " but become case sensitive if you type uppercase characters
+    set gdefault " applies substitutions globally on lines as default (:%s/foo/bar/g)
 
     " indentation
     set expandtab " turn a tabs into spaces
