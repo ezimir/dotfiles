@@ -273,9 +273,11 @@
 
 " Auto commands
     if has('autocmd')
+        " remove trailing whitespace on save (if allowed by filetype)
         augroup Trailing
             au!
 
+            " simple blacklist of filetypes where whitespace is crucial
             let g:trailing_filetype_blacklist=['diff']
 
             " whitespace stripping with cursor restoration
@@ -299,12 +301,14 @@
             au BufWritePre * :call StripTrailing()
         augroup END
 
+        " toggle line number display when changing modes
         augroup LineNumbers
             au!
             au InsertEnter * :set norelativenumber
             au InsertLeave * :set relativenumber
         augroup END
 
+        " when editing commit messages, wrap lines automatically
         augroup CommitEditor
             au!
             au FileType hgcommit,gitcommit set textwidth=72
