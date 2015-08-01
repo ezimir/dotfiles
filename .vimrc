@@ -118,10 +118,10 @@
     nnoremap <CR> :
 
     " open .vimrc in new tab (for quick edits)
-    nnoremap <leader>ve :tabe $MYVIMRC<CR>
+    nnoremap <leader>.e :tabe $MYVIMRC<CR>
 
     " reload .vimrc
-    nnoremap <silent> <leader>vr :source $MYVIMRC<CR>:call lightline#update()<CR>
+    nnoremap <silent> <leader>.r :source $MYVIMRC<CR>:call lightline#update()<CR>
 
     " fast saving
     nnoremap <leader>w :w!<CR>
