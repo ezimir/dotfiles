@@ -135,6 +135,9 @@
     " disable ex mode
     nnoremap Q <Nop>
 
+    " disable looking up words in man
+    noremap <S-K> <NOP>
+
     " enable mouse (all modes)
     set mouse=a
 
