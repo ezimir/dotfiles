@@ -22,7 +22,7 @@
     Plugin 'gmarik/Vundle.vim'
 
     " easy file opening
-    Plugin 'kien/ctrlp.vim'
+    Plugin 'ctrlpvim/ctrlp.vim'
 
     " nicer statusline
     Plugin 'itchyny/lightline.vim'
