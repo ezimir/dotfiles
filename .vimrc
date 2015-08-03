@@ -113,6 +113,10 @@
     nnoremap <left> <nop>
     nnoremap <right> <nop>
 
+    " improve movement over wrapped lines
+    nnoremap j gj
+    nnoremap k gk
+
     " open .vimrc in new tab (for quick edits)
     nnoremap <leader>.e :tabe $MYVIMRC<CR>
 
