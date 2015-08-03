@@ -113,10 +113,6 @@
     nnoremap <left> <nop>
     nnoremap <right> <nop>
 
-    " use enter as quicker command invoke
-    nnoremap <CR><CR> <CR>
-    nnoremap <CR> :
-
     " open .vimrc in new tab (for quick edits)
     nnoremap <leader>.e :tabe $MYVIMRC<CR>
 
