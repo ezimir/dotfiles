@@ -317,6 +317,12 @@
             au!
             au FileType hgcommit,gitcommit set textwidth=72
         augroup END
+
+        " autocomplete hyphenated words in CSS
+        augroup CSSKeywords
+            au!
+            au FileType css set iskeyword+=-
+        augroup END
     endif " has('autocmd')
 
 
