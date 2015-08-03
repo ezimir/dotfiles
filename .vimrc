@@ -100,18 +100,18 @@
     let mapleader="\<Space>"
 
     " disable arrow keys
-    inoremap <up> <nop>
-    inoremap <down> <nop>
-    inoremap <left> <nop>
-    inoremap <right> <nop>
-    vnoremap <up> <nop>
-    vnoremap <down> <nop>
-    vnoremap <left> <nop>
-    vnoremap <right> <nop>
-    nnoremap <up> <nop>
-    nnoremap <down> <nop>
-    nnoremap <left> <nop>
-    nnoremap <right> <nop>
+    inoremap <up> <NOP>
+    inoremap <down> <NOP>
+    inoremap <left> <NOP>
+    inoremap <right> <NOP>
+    vnoremap <up> <NOP>
+    vnoremap <down> <NOP>
+    vnoremap <left> <NOP>
+    vnoremap <right> <NOP>
+    nnoremap <up> <NOP>
+    nnoremap <down> <NOP>
+    nnoremap <left> <NOP>
+    nnoremap <right> <NOP>
 
     " improve movement over wrapped lines
     nnoremap j gj
@@ -133,7 +133,7 @@
     nnoremap <silent> <leader>/ :nohlsearch<CR>
 
     " disable ex mode
-    nnoremap Q <Nop>
+    nnoremap Q <NOP>
 
     " disable looking up words in man
     noremap <S-K> <NOP>
