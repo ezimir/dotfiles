@@ -157,6 +157,10 @@
     vnoremap < <gv
     vnoremap > >gv
 
+    " quick line deletions (above and below)
+    nnoremap <leader>d :-d<CR>``
+    nnoremap <leader>D :+d<CR>``
+
     " tab navigation
     nnoremap <silent> <S-Left> :tabprevious<CR>
     nnoremap <silent> <S-Right> :tabnext<CR>
