@@ -28,3 +28,6 @@ bindkey -e
 setopt inc_append_history
 setopt share_history
 
+# enable Ctrl-D to logout
+setopt NOIGNORE_EOF
+
