@@ -23,3 +23,8 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+
+# enable shared history
+setopt inc_append_history
+setopt share_history
+
