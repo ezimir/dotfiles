@@ -31,3 +31,7 @@ setopt share_history
 # enable Ctrl-D to logout
 setopt NOIGNORE_EOF
 
+# enable  Ctrl-R for history search
+bindkey '\e[3~' delete-char
+bindkey '^R' history-incremental-search-backward
+
