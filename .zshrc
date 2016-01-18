@@ -35,3 +35,7 @@ setopt NOIGNORE_EOF
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 
+# enable colors
+autoload -U colors && colors
+export CLICOLOR=1
+
