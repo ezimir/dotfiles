@@ -4,7 +4,9 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-
+# reset locale
+export LC_ALL='C'
+export LANG=en_US.UTF-8
 
 # mercurial utility functions
 hg_branch() {
