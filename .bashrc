@@ -8,25 +8,15 @@ fi
 export LC_ALL='C'
 export LANG=en_US.UTF-8
 
-# mercurial utility functions
-hg_branch() {
-    hg branch 2> /dev/null
-}
-
-# git utility functions
-git_branch() {
-    git name-rev --name-only HEAD 2> /dev/null
-}
-
-# version control wrapper
-vc_ps1() {
-    if [ $(hg_branch) ]; then
-        echo "[$(hg_branch)]"
-    fi
-    if [ $(git_branch) ]; then
-        echo "[$(git_branch)]"
+# version control information
+vc_info() {
+    local HG=$(hg branch 2> /dev/null)
+    local GIT=$(git name-rev --name-only HEAD 2> /dev/null)
+    local BRANCH=$HG$GIT
+    if [ $BRANCH ]; then
+        echo "[$BRANCH]"
     fi
 }
 
 # customize prompt information
-export PS1='[\t] \e[0;36m\u \e[0;37m@ \e[0;31m\h\e[m:\e[0;32m\w\e[0;37m$(vc_ps1) \\$\[$(tput sgr0)\]\e[m '
+export PS1='[\t] \e[0;36m\u \e[0;37m@ \e[0;31m\h\e[m:\e[0;32m\w\e[0;37m$(vc_info) \\$\[$(tput sgr0)\]\e[m '
