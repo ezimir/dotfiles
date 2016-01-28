@@ -18,5 +18,12 @@ vc_info() {
     fi
 }
 
+# output color cache
+CYAN="\e[0;36m"
+WHITE="\e[0;37m"
+RED="\e[0;31m"
+GREEN="\e[0;32m"
+DEFAULT="\e[m"
+
 # customize prompt information
-export PS1='[\t] \e[0;36m\u \e[0;37m@ \e[0;31m\h\e[m:\e[0;32m\w\e[0;37m$(vc_info) \\$\[$(tput sgr0)\]\e[m '
+export PS1="[\t] $CYAN\u $WHITE@ $RED\h$DEFAULT:$GREEN\w$WHITE"'$(vc_info) '"\\$\[$(tput sgr0)\]$DEFAULT "
