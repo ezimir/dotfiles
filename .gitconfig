@@ -3,3 +3,5 @@
 	name = Martin Tóth
 [core]
 	editor = vim
+[color]
+	ui = auto
