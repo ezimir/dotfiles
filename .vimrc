@@ -327,6 +327,12 @@
             au!
             au FileType css set iskeyword+=-
         augroup END
+
+        " wrap lines in vimdiff
+        augroup WrapDiffs
+            au!
+            au FilterWritePre * if &diff | setlocal wrap | endif
+        augroup END
     endif " has('autocmd')
 
 
