@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for filename in .vim .vimrc
+for filename in .vim .vimrc .bashrc .gitconfig
 do
     if [ -d ~/$filename ] || [ -f ~/$filename ];
     then
