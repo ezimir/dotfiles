@@ -333,6 +333,12 @@
             au!
             au FilterWritePre * if &diff | setlocal wrap | endif
         augroup END
+
+        " open HTML files from mounted FS as Django templates
+        augroup EvianDjango
+            au!
+            au BufRead,BufNewFile /Volumes/*.html set ft=htmldjango
+        augroup END
     endif " has('autocmd')
 
 
