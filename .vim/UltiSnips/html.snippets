@@ -1,4 +1,8 @@
 
+global !p
+from ultisnips import *
+endglobal
+
 # elements
 
 snippet css "Stylesheet Link" b
@@ -35,17 +39,11 @@ snippet html "Minimal HTML5 document" b
 endsnippet
 
 # attributes
-
-global !p
-def within_tag():
-    return re.search('<[^<>]+$', buffer[line - 1][:column])
-endglobal
-
-snippet c "Class" "within_tag()" e
+snippet c "Class" "within_tag(snip)" e
 class="${1:class-name}"
 endsnippet
 
-snippet i "Id" "within_tag()" e
+snippet i "Id" "within_tag(snip)" e
 id="${1:id}"
 endsnippet
 
