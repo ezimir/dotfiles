@@ -14,6 +14,10 @@ export LANG=en_US.UTF-8
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# don't put duplicates into history file
+# ingore commands starting with space
+export HISTCONTROL=ignoredups:erasedups:ignorespace
+
 # version control information
 vc_info() {
     local HG=$(hg branch 2> /dev/null)
