@@ -1,4 +1,7 @@
 
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
@@ -27,3 +30,4 @@ DEFAULT="\[\e[m\]"
 
 # customize prompt information
 export PS1="[\t] $CYAN\u $WHITE@ $RED\h$DEFAULT:$GREEN\w$WHITE"'$(vc_info) '"\\$\[$(tput sgr0)\]$DEFAULT "
+
