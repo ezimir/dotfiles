@@ -39,3 +39,5 @@ bindkey '^R' history-incremental-search-backward
 autoload -U colors && colors
 export CLICOLOR=1
 
+# customize prompt information
+PROMPT='%F{white}[%*] %F{cyan}%n %F{red}@ %F{cyan}%M%F{white}:%F{green}%~ %F{default}%# '
