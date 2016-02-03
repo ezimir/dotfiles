@@ -36,5 +36,7 @@ GREEN="\[\e[0;32m\]"
 DEFAULT="\[\e[m\]"
 
 # customize prompt information
-export PS1="[\t] $CYAN\u $WHITE@ $RED\h$DEFAULT:$GREEN\w$WHITE"'$(vc_info) '"\\$\[$(tput sgr0)\]$DEFAULT "
+export PS1="[\t] $CYAN\u $WHITE@ $RED\h$DEFAULT:$GREEN\w$WHITE"'$(vc_info)'" $ $DEFAULT"
+#    HH:MM:SS ^        ^     HOSTNAME ^                ^
+#             USERNAME ^             CURRENT DIRECTORY ^
 
