@@ -1,5 +1,5 @@
 
-highlight LocalIndentGuide guifg=NONE guibg=#445555 ctermfg=8 ctermbg=0 cterm=inverse
+highlight LocalIndentGuide guifg=#445555 guibg=NONE gui=inverse ctermfg=8 ctermbg=0 cterm=inverse
 
 " enable highlighting for python files
 if has('autocmd')
