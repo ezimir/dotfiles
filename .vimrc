@@ -57,6 +57,9 @@
     " surrounding movements/actions
     Plugin 'tpope/vim-surround'
 
+    " display a guide at current indent level
+    Plugin 'tweekmonster/local-indent.vim'
+
     call vundle#end()
 
 
