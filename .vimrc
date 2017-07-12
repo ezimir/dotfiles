@@ -60,6 +60,9 @@
     " display a guide at current indent level
     Plugin 'tweekmonster/local-indent.vim'
 
+    " HTML5 tags in syntax
+    Plugin 'othree/html5.vim'
+
     call vundle#end()
 
 
