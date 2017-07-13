@@ -39,11 +39,24 @@ bindkey '^R' history-incremental-search-backward
 autoload -U colors && colors
 export CLICOLOR=1
 
+# version control information
+vc_info() {
+    local HG=$(hg branch 2> /dev/null)
+    local GIT=$(git name-rev --name-only HEAD 2> /dev/null)
+    local BRANCH=$HG$GIT
+    if [ $BRANCH ]; then
+        echo "[$BRANCH] "
+    fi
+}
+
+# evaluate prompt
+setopt PROMPT_SUBST
+
 # customize prompt information
-PROMPT='%F{white}[%*] %F{cyan}%n %F{red}@ %F{cyan}%M%F{white}:%F{green}%~ %F{default}%# '
-#        HH:MM:SS ^           ^     full hostname ^                    ^             ^
-#                   $USERNAME ^                      current directory ^             ^
-#                                                                   shell privileges ^
+PROMPT='%F{white}[%*] %F{cyan}%n %F{red}@ %F{cyan}%M%F{white}:%F{green}%~ %F{white}$(vc_info)%F{default}%# '
+#        HH:MM:SS ^           ^     full hostname ^                    ^            ^                      ^
+#                   $USERNAME ^                      current directory ^            ^                      ^
+#                                                                       branch name ^     shell privileges ^
 RPROMPT='%F{22}%?%F{default}'
 #         ^ last exit code
 
