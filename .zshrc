@@ -14,6 +14,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Allow completion on aliases
+setopt complete_aliases
+
+# Ignore compiled files on vi/vim completion
+zstyle ':completion:*:*:(vi|vim|mvim|mvimt):*:*files' ignored-patterns '*.(a|dylib|so|o|pyc)'
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh/histfile
 HISTSIZE=10000
