@@ -60,9 +60,9 @@ setopt PROMPT_SUBST
 
 # customize prompt information
 PROMPT='%F{white}[%*] %F{cyan}%n %F{red}@ %F{cyan}%M%F{white}:%F{green}%~ %F{white}$(vc_info)%F{default}%# '
-#        HH:MM:SS ^           ^     full hostname ^                    ^            ^                      ^
-#                   $USERNAME ^                      current directory ^            ^                      ^
-#                                                                       branch name ^     shell privileges ^
+#        HH:MM:SS ^           ^     full hostname ^                    ^            ^                    ^
+#                   $USERNAME ^                      current directory ^            ^                    ^
+#                                                                       branch name ^   shell privileges ^
 RPROMPT='%F{22}%?%F{default}'
 #         ^ last exit code
 
