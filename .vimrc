@@ -285,6 +285,9 @@
     " display name of syntax group for word under cursor
     nnoremap <leader>sg :echom synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 
+    " fold every file by indent
+    set foldmethod=indent
+
 " Auto commands
     if has('autocmd')
         " remove trailing whitespace on save (if allowed by filetype)
