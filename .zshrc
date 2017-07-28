@@ -75,3 +75,7 @@ if [ $? -eq 0 ]; then
     source $venvwrap
 fi
 
+# ALIASES
+
+alias django="python manage.py"
+
