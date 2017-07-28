@@ -66,3 +66,12 @@ PROMPT='%F{white}[%*] %F{cyan}%n %F{red}@ %F{cyan}%M%F{white}:%F{green}%~ %F{whi
 RPROMPT='%F{22}%?%F{default}'
 #         ^ last exit code
 
+# VIRTUALENV
+
+venvwrap="virtualenvwrapper_lazy.sh"
+/usr/bin/which -s $venvwrap
+if [ $? -eq 0 ]; then
+    venvwrap=`/usr/bin/which $venvwrap`
+    source $venvwrap
+fi
+
