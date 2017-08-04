@@ -352,6 +352,12 @@
             au!
             au BufRead,BufNewFile /Volumes/*.html set ft=htmldjango
         augroup END
+
+        " set tab width to 4 in SASS files
+        augroup SASSindent
+            au!
+            au BufRead,BufNewFile *.sass set shiftwidth=4
+        augroup END
     endif " has('autocmd')
 
 
