@@ -66,6 +66,18 @@ PROMPT='%F{white}[%*] %F{cyan}%n %F{red}@ %F{cyan}%M%F{white}:%F{green}%~ %F{whi
 RPROMPT='%F{22}%?%F{default}'
 #         ^ last exit code
 
+# colorize man output
+man() {
+    LESS_TERMCAP_mb=$'\e[1;31m' \
+    LESS_TERMCAP_md=$'\e[1;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[1;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[1;32m' \
+    command man "$@"
+}
+
 # VIRTUALENV
 
 venvwrap="virtualenvwrapper_lazy.sh"
