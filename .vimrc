@@ -63,6 +63,9 @@
     " HTML5 tags in syntax
     Plugin 'othree/html5.vim'
 
+    " colorscheme
+    Plugin 'sjl/badwolf'
+
     call vundle#end()
 
 
