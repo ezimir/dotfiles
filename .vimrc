@@ -291,6 +291,7 @@
     " fold every file by indent
     set foldmethod=indent
 
+
 " Auto commands
     if has('autocmd')
         " remove trailing whitespace on save (if allowed by filetype)

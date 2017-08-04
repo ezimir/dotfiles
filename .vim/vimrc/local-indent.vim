@@ -5,7 +5,7 @@ highlight LocalIndentGuide guifg=#445555 guibg=NONE gui=inverse ctermfg=8 ctermb
 if has('autocmd')
     augroup LocalIndentGuide
         au!
-        au FileType python LocalIndentGuide +hl
+        au FileType python,html,htmldjango LocalIndentGuide +cc
     augroup END
 endif
 
