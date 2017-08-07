@@ -5,7 +5,7 @@ set laststatus=2
 " statusline configuration
 let g:lightline = {
     \   'active': {
-    \       'left': [ [ 'mode', 'paste' ], [ 'ctrlpmark' ], [ 'readonly', 'filename', 'modified' ] ],
+    \       'left': [ [ 'mode', 'paste' ], [ 'ctrlpmark', 'tagbar' ], [ 'readonly', 'filename', 'modified' ] ],
     \       'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype', 'syntastic' ] ],
     \   },
     \   'component_type': {
@@ -19,6 +19,7 @@ let g:lightline = {
     \   },
     \   'component': {
     \       'readonly': '%{&readonly?"⭤":""}',
+    \       'tagbar': '%{tagbar#currenttag("[%s]", "", "f")}',
     \   },
     \}
 
