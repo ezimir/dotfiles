@@ -46,12 +46,28 @@ autoload -U colors && colors
 export CLICOLOR=1
 
 # version control information
+dir_exists() {
+    local target_dir=${1:a}
+    local target_path="$target_dir/$2"
+    if [ -d "$target_path" ]; then
+        echo "exists"
+    else
+        local parent_dir=$(dirname $target_dir)
+        if [ $parent_dir != "/" ]; then
+            dir_exists $parent_dir $2
+        fi
+    fi
+}
 vc_info() {
-    local HG=$(hg branch 2> /dev/null)
-    local GIT=$(git name-rev --name-only HEAD 2> /dev/null)
-    local BRANCH=$HG$GIT
-    if [ $BRANCH ]; then
-        echo "[$BRANCH] "
+    local hgdir=$(dir_exists pwd .hg)
+    local gitdir=$(dir_exists pwd .git)
+    if [ $hgdir ]; then
+        local branch=$(hg branch 2> /dev/null)
+    elif [ $gitdir ]; then
+        local branch=$(git branch 2> /dev/null | grep \* | cut -d ' ' -f2)
+    fi
+    if [ $branch ]; then
+        echo "[$branch] "
     fi
 }
 
