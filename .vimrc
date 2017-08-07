@@ -222,7 +222,7 @@
 
     " whitespace
     set list " display everything
-    set listchars=tab:‣\ , " specify whitespace representation characters
+    set listchars=tab:‣\ ,extends:›,precedes:‹,nbsp:␣, " specify whitespace representation characters
 
     " configure backspace so it acts as it should act
     set backspace=eol,start,indent " positions where to allow backspace
