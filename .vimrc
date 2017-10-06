@@ -19,7 +19,7 @@
     call vundle#begin()
 
     " let Vundle manage Vundle, required
-    Plugin 'gmarik/Vundle.vim'
+    Plugin 'VundleVim/Vundle.vim'
 
     " easy file opening
     Plugin 'ctrlpvim/ctrlp.vim'
