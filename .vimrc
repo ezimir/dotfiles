@@ -176,18 +176,18 @@
 
     " tab movement
     function! MoveTabLeft()
-        let tabnr = tabpagenr()
-        execute "tabmove " . (tabnr - 2)
-        if tabnr == tabpagenr()
-            tabmove
+        let tabnr = tabpagenr() - 2
+        if tabnr < 0
+            let tabnr = tabpagenr('$')
         endif
+        execute "tabmove " . tabnr
     endfunction
     function! MoveTabRight()
-        let tabnr = tabpagenr()
-        execute "tabmove " . (tabnr + 1)
-        if tabnr == tabpagenr()
-            tabmove 0
+        let tabnr = tabpagenr() + 1
+        if tabnr > tabpagenr('$')
+            let tabnr = 0
         endif
+        execute "tabmove " . tabnr
     endfunction
 
     nnoremap <silent> <S-A-Left> :call MoveTabLeft()<CR>
