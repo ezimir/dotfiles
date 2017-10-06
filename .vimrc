@@ -280,7 +280,6 @@
 
     " highlight trailing whitespace
     highlight ExtraWhitespace ctermbg=darkred guibg=darkred " name a new highlight group
-    match ExtraWhitespace /\s\+$/ " show the group
 
     " cursor line needs more contrast
     highlight CursorLine guibg=#35322d
@@ -295,7 +294,7 @@
 " Auto commands
     if has('autocmd')
         " remove trailing whitespace on save (if allowed by filetype)
-        augroup Trailing
+        augroup TrailingRemove
             au!
 
             " simple blacklist of filetypes where whitespace is crucial
@@ -320,6 +319,13 @@
 
             " remove trailing whitespace before writing file
             au BufWritePre * :call StripTrailing()
+        augroup END
+
+        " only highlight trailing chars when not in insert mode
+        augroup TrailingHighlight
+            au!
+            au InsertEnter * match ExtraWhitespace //
+            au InsertLeave * match ExtraWhitespace /\s\+$/
         augroup END
 
         " toggle line number display when changing modes
