@@ -380,7 +380,7 @@
 
 
 " Plugin configuration
-    for filename in split(glob('~/.vim/vimrc/*.vim'), '\n')
+    for filename in split(glob('~/.vim/vimrc/[^_]*.vim'), '\n')
         exe 'source' filename
     endfor
 
