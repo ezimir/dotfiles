@@ -37,7 +37,7 @@
     Plugin 'ervandew/supertab'
 
     " syntax error checks
-    Plugin 'scrooloose/syntastic'
+    Plugin 'w0rp/ale'
 
     " list of variables/functions in current buffer
     Plugin 'majutsushi/tagbar'
@@ -192,6 +192,18 @@
 
     nnoremap <silent> <S-A-Left> :call MoveTabLeft()<CR>
     nnoremap <silent> <S-A-Right> :call MoveTabRight()<CR>
+
+    " toggle location list (via detecting if number of opened windows changed)
+    function! ToggleLocationList()
+        let win_count = winnr('$') " save number of opened windows
+        cclose " try to close location list
+        if win_count == winnr('$') " if number of opened windows didn't change
+            cwindow " nothing was closed, we can open error list
+        endif
+    endfunction
+
+    " set mapping for location list toggle
+    nnoremap <silent> <leader>e :call ToggleLocationList()<cr>
 
 
 " Interface
