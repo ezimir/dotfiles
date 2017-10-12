@@ -387,3 +387,8 @@
         exe 'source' filename
     endfor
 
+
+" Tags
+    " search for ".tags" file in current dir, and recursively upwards
+    set tags=./.tags;/
+
