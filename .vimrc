@@ -66,6 +66,9 @@
     " colorscheme
     Plugin 'sjl/badwolf'
 
+    "
+    Plugin 'ludovicchabant/vim-gutentags'
+
     call vundle#end()
 
 
