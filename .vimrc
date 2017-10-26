@@ -66,6 +66,9 @@
     " colorscheme
     Plugin 'sjl/badwolf'
 
+    " bracket navigation
+    Plugin 'tpope/vim-unimpaired'
+
     "
     Plugin 'ludovicchabant/vim-gutentags'
 
@@ -152,10 +155,6 @@
 
     " enable mouse (all modes)
     set mouse=a
-
-    " error list navigation
-    nnoremap <silent> ]e :lnext<CR>
-    nnoremap <silent> [e :lprev<CR>
 
     " keep search results in the middle of the screen
     nnoremap n nzz
