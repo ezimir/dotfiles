@@ -1,4 +1,7 @@
 
+" keep gutter always open
+let g:ale_sign_column_always = 1
+
 " customize gutter sign
 let g:ale_sign_error = 'E>'
 let g:ale_sign_warning = 'W-'
