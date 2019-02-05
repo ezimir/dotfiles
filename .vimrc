@@ -381,12 +381,6 @@
     endif " has('autocmd')
 
 
-" Plugin configuration
-    for filename in split(glob('~/.vim/vimrc/[^_]*.vim'), '\n')
-        exe 'source' filename
-    endfor
-
-
 " Tags
     " search for ".tags" file in current dir, and recursively upwards
     set tags=./.tags;/
