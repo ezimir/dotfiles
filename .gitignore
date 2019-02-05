@@ -1,6 +1,8 @@
 *.swp
 *.pyc
-.vim/.netrwhist
 
+.vim/.netrwhist
 .vim/bundle/*
-!.vim/bundle/Vundle.vim
+.vim/undodir/*
+.tags
+
