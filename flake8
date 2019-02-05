@@ -1,0 +1,9 @@
+[flake8]
+ignore = E501,E251,E302,E303,W391
+
+# E501= line length
+# E251= spaces around function argument assignment
+# E302= expected 2 blank lines
+# E303= too many blank lines
+# W391= blank line at the end of file
+
