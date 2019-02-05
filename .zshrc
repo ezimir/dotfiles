@@ -17,6 +17,9 @@ compinit
 # Allow completion on aliases
 setopt complete_aliases
 
+# Allow bash style comments (`#comment`)
+setopt interactivecomments
+
 # Ignore compiled files on vi/vim completion
 zstyle ':completion:*:*:(vi|vim|mvim|mvimt):*:*files' ignored-patterns '*.(a|dylib|so|o|pyc)'
 
