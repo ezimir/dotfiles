@@ -1,0 +1,59 @@
+
+global !p
+from helpers import *
+endglobal
+
+
+snippet #- "Encoding header" b
+# -*- coding: utf-8 -*-
+$0
+endsnippet
+
+snippet ## "Import structure" b
+# builtins
+from __future__ import unicode_literals
+$1
+# functions
+$2
+# objects
+$3
+# constants
+$0
+endsnippet
+
+snippet _i "__init__" "within_class(snip)" eb
+def __init__(self${1:, *args, **kwargs}):
+    super(${2:`!p snip.rv = context`}, self).__init__(${1/,? ?(.*)/$1/})
+endsnippet
+
+snippet _s "__str__" "within_class(snip)" eb
+def __str__(self):
+    return self$0
+endsnippet
+
+snippet cl "class" b
+class ${1:ClassName}(${2}):
+    $0
+endsnippet
+
+snippet def "def method()" b
+def ${1:method}(${2:self}):
+    ${3}
+endsnippet
+
+snippet im "import module" b
+import ${1:module}
+endsnippet
+
+snippet fr "from module import object" b
+from ${1:module} import ${2:object}
+endsnippet
+
+snippet pdb "Debugger breakpoint" b
+import pdb;pdb.set_trace()
+endsnippet
+
+snippet super "super" "within_method(snip)" e
+super(${1:`!p snip.rv = context[0]`}, self).${2:`!p snip.rv = context[1]`}(${3:`!p snip.rv = context[2]`})
+endsnippet
+
