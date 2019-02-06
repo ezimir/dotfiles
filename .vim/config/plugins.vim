@@ -8,24 +8,17 @@ endif
 call plug#begin('~/.vim/bundle')
 
 
-" colorscheme
-Plug 'sjl/badwolf'
+" interface
+Plug 'sjl/badwolf'            " colorscheme
+Plug 'itchyny/lightline.vim'  " nicer statusline
 
-" tabular alignment
-Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
+" integrations
+Plug 'w0rp/ale'               " syntax error checks
 
-" comment/uncomment whole blocks
-Plug 'tpope/vim-commentary'
-
-
-" nicer statusline
-Plug 'itchyny/lightline.vim'
-
-" syntax error checks
-Plug 'w0rp/ale'
-
-" fuzzy file finder
-Plug 'junegunn/fzf'
+" editing
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " tabular alignment
+Plug 'tpope/vim-commentary'   " comment/uncomment whole blocks
+Plug 'junegunn/fzf'           " fuzzy file finder
 Plug 'junegunn/fzf.vim'
 
 
