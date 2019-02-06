@@ -4,6 +4,7 @@ let s:vimfiles = [
     \'~/.vim/config/plugins.vim',
     \'~/.vim/config/interface.vim',
     \'~/.vim/config/keys.vim',
+    \'~/.vim/config/autocmd.vim',
 \]
 
 " load all configuration files
