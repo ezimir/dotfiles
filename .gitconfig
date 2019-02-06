@@ -1,10 +1,15 @@
 [user]
-	email = ezimir@gmail.com
-	name = Martin Tóth
+    name = Martin Tóth
+    email = ezimir@gmail.com
 [core]
 	editor = vim
+    editor = vim
+[credential]
+    helper = osxkeychain
 [color]
-	ui = auto
+    ui = true
+[push]
+    default = simple
 [alias]
     branches = branch -a
     remotes = remote -v
