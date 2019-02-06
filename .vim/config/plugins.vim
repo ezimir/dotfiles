@@ -13,6 +13,7 @@ Plug 'sjl/badwolf'            " colorscheme
 Plug 'itchyny/lightline.vim'  " nicer statusline
 
 " integrations
+Plug 'airblade/vim-gitgutter' " display git status in gutter
 Plug 'w0rp/ale'               " syntax error checks
 
 " editing
@@ -20,6 +21,7 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " tabular alignment
 Plug 'tpope/vim-commentary'   " comment/uncomment whole blocks
 Plug 'junegunn/fzf'           " fuzzy file finder
 Plug 'junegunn/fzf.vim'
+Plug 'ervandew/supertab'      " autocompletion using <Tab>
 
 
 call plug#end()
