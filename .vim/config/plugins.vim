@@ -15,6 +15,7 @@ Plug 'itchyny/lightline.vim'  " nicer statusline
 " integrations
 Plug 'airblade/vim-gitgutter' " display git status in gutter
 Plug 'w0rp/ale'               " syntax error checks
+Plug 'SirVer/ultisnips'       " code snippet autoexpansion
 
 " editing
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " tabular alignment
