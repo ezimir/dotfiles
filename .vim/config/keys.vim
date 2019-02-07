@@ -16,7 +16,7 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 " " open .vimrc in new tab (for quick edits)
 " nnoremap <leader>.e :tabe $MYVIMRC<CR>
-" 
+"
 " " reload .vimrc
 " nnoremap <silent> <leader>.r :source $MYVIMRC<CR>:call lightline#update()<CR>
 
@@ -24,6 +24,8 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 " nnoremap <silent> <leader>d :-d<CR>``
 " nnoremap <silent> <leader>D :+d<CR>``
 
+" open tag under cursor in new tab via Ctrl+\
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " disable arrow keys
 inoremap <up> <NOP>
@@ -95,7 +97,7 @@ nnoremap <silent> <S-A-Right> :call MoveTabRight()<CR>
 "         cwindow " nothing was closed, we can open error list
 "     endif
 " endfunction
-" 
+"
 " " set mapping for location list toggle
 " nnoremap <silent> <leader>e :call ToggleLocationList()<cr>
 

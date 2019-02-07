@@ -5,13 +5,16 @@ set laststatus=2
 let g:lightline = {
     \'active': {
         \'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ],
-        \'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype'], [ 'lint' ] ],
+        \'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'fileformat', 'fileencoding', 'filetype'], [ 'tagstatus', 'lint' ] ],
     \},
     \'component_type': {
         \'lint': 'error',
     \},
     \'component_expand': {
         \'lint': 'ALEGetStatusLineFlag',
+    \},
+    \'component_function': {
+        \'tagstatus': 'GutentagsFlag',
     \},
     \'component': {
         \'readonly': '%{&readonly?"⭤":""}',
@@ -22,10 +25,6 @@ let g:lightline = {
 " statusline configuration
     "\       'left': [ [ 'mode', 'paste' ], [ 'ctrlpmark', 'tagbar' ], [ 'readonly', 'filename', 'modified' ] ],
     "\       'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'tagstatus', 'fileformat', 'fileencoding', 'filetype', 'lint' ] ],
-    "\   'component_function': {
-    "\       'ctrlpmark': 'CtrlPMark',
-    "\       'tagstatus': 'GutentagsFlag',
-    "\   },
     "\   'component': {
     "\       'tagbar': '%{tagbar#currenttag("[%s]", "", "f")}',
     "\   },
@@ -48,7 +47,7 @@ endfunction
 autocmd User ALELintPost call lightline#update()
 
 
-" function! GutentagsFlag() abort
-"     return gutentags#statusline("")
-" endfunction
+function! GutentagsFlag() abort
+    return gutentags#statusline()
+endfunction
 

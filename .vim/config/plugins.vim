@@ -11,6 +11,7 @@ call plug#begin('~/.vim/bundle')
 " interface
 Plug 'sjl/badwolf'            " colorscheme
 Plug 'itchyny/lightline.vim'  " nicer statusline
+Plug 'ludovicchabant/vim-gutentags' " autogenerate tags
 
 " integrations
 Plug 'airblade/vim-gitgutter' " display git status in gutter

@@ -24,3 +24,6 @@ set writebackup              " create a backup file when writing
 set nobackup                 " but don't keep it after write is done
 set noswapfile               " don't write swapfile
 
+" search for ".tags" file in current dir, and recursively upwards
+set tags=./.tags;/
+
