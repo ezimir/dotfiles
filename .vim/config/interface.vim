@@ -47,7 +47,9 @@ set listchars=tab:‣\ ,extends:›,precedes:‹,nbsp:␣
 set backspace=eol,start,indent " positions where to allow backspace
 
 " enable mouse (all modes)
-set mouse=a
+if has('mouse')
+    set mouse=a
+endif
 
 
 
