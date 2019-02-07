@@ -22,14 +22,6 @@ let g:lightline = {
 \}
 
 
-" statusline configuration
-    "\       'left': [ [ 'mode', 'paste' ], [ 'ctrlpmark', 'tagbar' ], [ 'readonly', 'filename', 'modified' ] ],
-    "\       'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'tagstatus', 'fileformat', 'fileencoding', 'filetype', 'lint' ] ],
-    "\   'component': {
-    "\       'tagbar': '%{tagbar#currenttag("[%s]", "", "f")}',
-    "\   },
-
-
 function! ALEGetStatusLineFlag() abort
     let l:counts = ale#statusline#Count(bufnr(''))
 
