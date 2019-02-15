@@ -68,5 +68,11 @@ if has('autocmd')
         au! BufWritePre *.po call UpdateRevisionDate()
     augroup END
 
+    " force file types for nginx conf files
+    augroup ConfSyntax
+        au!
+        au BufRead,BufNewFile *nginx*.conf setf dosini
+    augroup END
+
 endif
 
