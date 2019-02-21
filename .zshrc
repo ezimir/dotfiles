@@ -108,5 +108,9 @@ fi
 
 # ALIASES
 
+# vim
+alias vimh='function VimHelp() { vim -c ":help $1 | :only" };VimHelp'
+alias mvimh='function VimHelp() { mvim -c ":help $1 | :only" };VimHelp'
+
 alias django="python manage.py"
 
