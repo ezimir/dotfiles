@@ -1,17 +1,8 @@
 
-let s:vimfiles = [
-    \'~/.vim/config/init.vim',
-    \'~/.vim/config/plugins.vim',
-    \'~/.vim/config/interface.vim',
-    \'~/.vim/config/keys.vim',
-    \'~/.vim/config/autocmd.vim',
-\]
-
-" load all configuration files
-for filename in s:vimfiles
-    if filereadable(expand(filename))
-        exec 'source ' . expand(filename)
-    endif
+" load all configuration files (omit files starting with _)
+for filename in split(glob('~/.vim/config/[^_]*.vim'), '\n')
+    echom filename
+    exec 'source ' . expand(filename)
 endfor
 
 " load all plugin settings (omit files starting with _)

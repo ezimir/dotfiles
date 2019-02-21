@@ -74,5 +74,11 @@ if has('autocmd')
         au BufRead,BufNewFile *nginx*.conf setf dosini
     augroup END
 
+    " force tab witdh for SASS files
+    augroup SASSindent
+        au!
+        au BufRead,BufNewFile *.sass set shiftwidth=4
+    augroup END
+
 endif
 

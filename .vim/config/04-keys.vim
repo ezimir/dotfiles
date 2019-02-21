@@ -14,6 +14,16 @@ nnoremap <leader>sg :echom synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 " deselect last search query
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
+" " open .vimrc in new tab (for quick edits)
+" nnoremap <leader>.e :tabe $MYVIMRC<CR>
+"
+" " reload .vimrc
+" nnoremap <silent> <leader>.r :source $MYVIMRC<CR>:call lightline#update()<CR>
+
+" " quick line deletions (above and below)
+" nnoremap <silent> <leader>d :-d<CR>``
+" nnoremap <silent> <leader>D :+d<CR>``
+
 " open tag under cursor in new tab via Ctrl+\
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
@@ -78,4 +88,20 @@ endfunction
 
 nnoremap <silent> <S-A-Left> :call MoveTabLeft()<CR>
 nnoremap <silent> <S-A-Right> :call MoveTabRight()<CR>
+
+" " toggle location list (via detecting if number of opened windows changed)
+" function! ToggleLocationList()
+"     let win_count = winnr('$') " save number of opened windows
+"     cclose " try to close location list
+"     if win_count == winnr('$') " if number of opened windows didn't change
+"         cwindow " nothing was closed, we can open error list
+"     endif
+" endfunction
+"
+" " set mapping for location list toggle
+" nnoremap <silent> <leader>e :call ToggleLocationList()<cr>
+
+" " error list navigation
+" nnoremap <silent> ]e :cnext<CR>
+" nnoremap <silent> [e :cprev<CR>
 
