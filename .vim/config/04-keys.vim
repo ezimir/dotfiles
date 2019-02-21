@@ -14,16 +14,6 @@ nnoremap <leader>sg :echom synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 " deselect last search query
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 
-" " open .vimrc in new tab (for quick edits)
-" nnoremap <leader>.e :tabe $MYVIMRC<CR>
-"
-" " reload .vimrc
-" nnoremap <silent> <leader>.r :source $MYVIMRC<CR>:call lightline#update()<CR>
-
-" " quick line deletions (above and below)
-" nnoremap <silent> <leader>d :-d<CR>``
-" nnoremap <silent> <leader>D :+d<CR>``
-
 " open tag under cursor in new tab via Ctrl+\
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
