@@ -1,7 +1,6 @@
 
 " load all configuration files (omit files starting with _)
 for filename in split(glob('~/.vim/config/[^_]*.vim'), '\n')
-    echom filename
     exec 'source ' . expand(filename)
 endfor
 
