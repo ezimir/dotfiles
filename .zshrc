@@ -111,6 +111,8 @@ fi
 # vim
 alias vimh='function VimHelp() { vim -c ":help $1 | :only" };VimHelp'
 alias mvimh='function VimHelp() { mvim -c ":help $1 | :only" };VimHelp'
+alias vimt='vim --remote-tab-silent'
+alias mvimt='mvim --remote-tab-silent'
 
 alias django="python manage.py"
 
