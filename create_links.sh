@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for filename in .vim .vimrc .bashrc .gitconfig
+for filename in .vim .vimrc .bashrc .gitconfig .eslintrc.js
 do
     if [ -d ~/$filename ] || [ -f ~/$filename ];
     then
