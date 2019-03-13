@@ -24,6 +24,7 @@ Plug 'tpope/vim-commentary'   " comment/uncomment whole blocks
 Plug 'junegunn/fzf'           " fuzzy file finder
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'      " autocompletion using <Tab>
+Plug 'vim-scripts/closetag.vim' " autoclose HTML tags
 
 call plug#end()
 
