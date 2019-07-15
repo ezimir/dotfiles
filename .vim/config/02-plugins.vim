@@ -9,7 +9,8 @@ call plug#begin('~/.vim/bundle')
 
 
 " interface
-Plug 'sjl/badwolf'              " colorscheme
+Plug 'sjl/badwolf'              " colorscheme (dark)
+Plug 'JaySandhu/xcode-vim'      " colorscheme (light)
 Plug 'itchyny/lightline.vim'    " nicer statusline
 Plug 'ludovicchabant/vim-gutentags' " autogenerate tags
 
