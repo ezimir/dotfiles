@@ -116,6 +116,11 @@ alias mvimt='mvim --remote-tab-silent'
 
 alias django="python manage.py"
 
+if command -v direnv 1>/dev/null 2>&1; then
+  # evaluate local .envrc files via direnv
+  eval "$(direnv hook zsh)"
+fi
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
