@@ -27,5 +27,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'        " autocompletion using <Tab>
 Plug 'vim-scripts/closetag.vim' " autoclose HTML tags
 
+" extensions
+Plug 'aserebryakov/vim-todo-lists'  " todo checklist file format
+
 call plug#end()
 
