@@ -84,6 +84,10 @@ endfor
 " if possible, use nicer font
 if &t_Co >= 256 || has('gui_running')
     set guifont=Source_Code_Pro_ExtraLight:h11
+
+    augroup ColorSchemeChange
+        autocmd! ColorScheme xcode set guifont=Source_Code_Pro:h11
+    augroup END
 endif
 
 " assuming MacVim
