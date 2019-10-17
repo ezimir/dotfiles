@@ -24,14 +24,21 @@ setopt interactivecomments
 zstyle ':completion:*:*:(vi|vim|mvim|mvimt):*:*files' ignored-patterns '*.(a|dylib|so|o|pyc)'
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.zsh/histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTFILE=~/.histfile
+HISTSIZE=1000000
+SAVEHIST=1000000
 setopt appendhistory autocd extendedglob nomatch notify
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# enable type correction sugestions
+setopt correct
+
+# suggest package installation if command is not found
+if [ -f /etc/zsh_command_not_found ]; then
+    source /etc/zsh_command_not_found
+fi
 
 # enable shared history
 setopt inc_append_history
