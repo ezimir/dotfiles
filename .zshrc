@@ -120,6 +120,11 @@ man() {
     command man "$@"
 }
 
+# colorize ls output and add shortcuts
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias l.='ls -d .*'
+
 # VIRTUALENV
 
 venvwrap="virtualenvwrapper_lazy.sh"
