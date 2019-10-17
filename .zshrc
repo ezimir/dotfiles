@@ -51,9 +51,25 @@ setopt NOIGNORE_EOF
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 
+# fix keys for Guake terminal
+EMULATOR=$(ps -o 'cmd=' -p `ps -o 'ppid=' -p $$`)
+if [[ $EMULATOR =~ "guake" ]]; then
+    bindkey ";5C" forward-word
+    bindkey ";5D" backward-word
+
+fi
+
+# update window title on each direcotry change
+case $TERM in
+  xterm*)
+    precmd () {print -Pn "\e]0;%~\a"}
+    ;;
+esac
+
 # enable colors
 autoload -U colors && colors
 export CLICOLOR=1
+
 
 # version control information
 dir_exists() {
