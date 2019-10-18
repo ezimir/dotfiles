@@ -141,16 +141,16 @@ if [ $? -eq 0 ]; then
     source $venvwrap
 fi
 
-# ALIASES
+# shortcut for django's manage.py
+alias django="python manage.py"
 
-# vim
+# opening vim
 alias vimh='function VimHelp() { vim -c ":help $1 | :only" };VimHelp'
 alias mvimh='function VimHelp() { mvim -c ":help $1 | :only" };VimHelp'
 alias vimt='vim --remote-tab-silent'
 alias mvimt='mvim --remote-tab-silent'
 
-alias django="python manage.py"
-
+# enable automatic direnv
 if command -v direnv 1>/dev/null 2>&1; then
   # evaluate local .envrc files via direnv
   eval "$(direnv hook zsh)"
