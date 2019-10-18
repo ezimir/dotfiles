@@ -59,10 +59,17 @@ if [[ $EMULATOR =~ "guake" ]]; then
 
 fi
 
-# update window title on each direcotry change
+# update window title
 case $TERM in
   xterm*)
-    precmd () {print -Pn "\e]0;%~\a"}
+    # when directory changes
+    precmd () {
+        print -Pn "\e]0;%~\a"
+    }
+    # when process starts
+    preexec () {
+        print -Pn "\e]0;$1\a"
+    }
     ;;
 esac
 
