@@ -132,15 +132,6 @@ alias ls='ls --color=auto'
 alias ll='ls -la'
 alias l.='ls -d .*'
 
-# VIRTUALENV
-
-venvwrap="virtualenvwrapper_lazy.sh"
-/usr/bin/which -s $venvwrap
-if [ $? -eq 0 ]; then
-    venvwrap=`/usr/bin/which $venvwrap`
-    source $venvwrap
-fi
-
 # shortcut for django's manage.py
 alias django="python manage.py"
 
