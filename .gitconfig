@@ -1,8 +1,8 @@
 [user]
-    name = Martin Tóth
+    name = Martin Tóth
     email = ezimir@gmail.com
 [core]
-	excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
     editor = vim
 [color]
     ui = true
