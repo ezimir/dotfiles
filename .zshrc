@@ -150,6 +150,11 @@ alias mvimh='function VimHelp() { mvim -c ":help $1 | :only" };VimHelp'
 alias vimt='vim --remote-tab-silent'
 alias mvimt='mvim --remote-tab-silent'
 
+# enable fzf
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/zsh/vendor-completions/_fzf
+export FZF_DEFAULT_COMMAND="ag -U -p ~/.ignore -g ''"
+
 # enable automatic direnv
 if command -v direnv 1>/dev/null 2>&1; then
   # evaluate local .envrc files via direnv
