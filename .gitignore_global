@@ -3,6 +3,7 @@
 
 # vim
 *~
+.tags*
 
 # local config
 .env
