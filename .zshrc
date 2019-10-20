@@ -68,7 +68,7 @@ case $TERM in
     }
     # when process starts
     preexec () {
-        print -Pn "\e]0;$1\a"
+        print -Pn "\e]0;${~1:gs/%/%%}\a"
     }
     ;;
 esac
