@@ -141,6 +141,14 @@ alias mvimh='function VimHelp() { mvim -c ":help $1 | :only" };VimHelp'
 alias vimt='vim --remote-tab-silent'
 alias mvimt='mvim --remote-tab-silent'
 
+# generate 5 word password
+function WordPasswordToClipboard()
+{
+    shuf -n 5 /usr/share/dict/words | cut -f1 -d"'" | tr '[:upper:]' '[:lower:]' | paste -sd "-" - | xclip -selection c
+    echo 'Password copied to clipboard. Use Ctrl-v to paste it.'
+}
+alias pass5=WordPasswordToClipboard
+
 # enable fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/zsh/vendor-completions/_fzf
