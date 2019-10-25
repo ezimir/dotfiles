@@ -60,8 +60,8 @@ if [[ $EMULATOR =~ "guake" ]]; then
 fi
 
 # update window title
-case $TERM in
-  xterm*)
+case $(ps -h -o comm -p $(ps -h -o ppid -p $$)) in
+  (guake)
     # when directory changes
     precmd () {
         print -Pn "\e]0;%~\a"
