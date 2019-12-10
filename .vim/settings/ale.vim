@@ -20,3 +20,11 @@ augroup VimDiff
     autocmd VimEnter,FilterWritePre * if &diff | ALEDisable | endif
 augroup END
 
+
+" enable fixers
+let g:ale_fixers = {'python': ['black']}
+let g:ale_python_black_options = '--config ' . expand('~/.config/black')
+
+" run fixers on save
+let g:ale_fix_on_save = 1
+
