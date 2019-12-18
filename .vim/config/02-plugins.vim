@@ -30,6 +30,7 @@ Plug 'mattn/emmet-vim'          " HTML tag expanding from CSS syntax
 
 " extensions
 Plug 'aserebryakov/vim-todo-lists'  " todo checklist file format
+Plug 'junegunn/goyo.vim'        " focused writing
 
 call plug#end()
 
