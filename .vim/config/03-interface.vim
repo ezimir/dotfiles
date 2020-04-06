@@ -105,3 +105,7 @@ highlight ExtraWhitespace ctermbg=darkred guibg=darkred " name a new highlight g
 " cursor line needs more contrast
 highlight CursorLine guibg=#35322d
 
+" extend autoread behaviour
+" https://unix.stackexchange.com/a/383044/106355
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
