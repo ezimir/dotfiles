@@ -147,6 +147,10 @@ alias pass5=WordPasswordToClipboard
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/zsh/vendor-completions/_fzf
 export FZF_DEFAULT_COMMAND="ag -U -p ~/.ignore -g ''"
+export FZF_DEFAULT_OPTS="
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--bind '?:toggle-preview'
+"
 
 # enable automatic direnv
 if command -v direnv 1>/dev/null 2>&1; then
