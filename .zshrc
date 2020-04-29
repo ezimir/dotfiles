@@ -134,6 +134,7 @@ alias vimh='function VimHelp() { vim -c ":help $1 | :only" };VimHelp'
 alias mvimh='function VimHelp() { mvim -c ":help $1 | :only" };VimHelp'
 alias vimt='vim --remote-tab-silent'
 alias mvimt='mvim --remote-tab-silent'
+alias gvim="x-terminal-emulator --title vim --start-as maximized vim"
 
 # generate 5 word password
 function WordPasswordToClipboard()
