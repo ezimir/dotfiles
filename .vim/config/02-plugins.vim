@@ -18,6 +18,7 @@ Plug 'ludovicchabant/vim-gutentags' " autogenerate tags
 Plug 'airblade/vim-gitgutter'   " display git status in gutter
 Plug 'w0rp/ale'                 " syntax error checks
 Plug 'SirVer/ultisnips'         " code snippet autoexpansion
+Plug 'majutsushi/tagbar'        " file hierarchy overviewin sidebar
 
 " editing
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " tabular alignment
@@ -29,7 +30,7 @@ Plug 'vim-scripts/closetag.vim' " autoclose HTML tags
 Plug 'mattn/emmet-vim'          " HTML tag expanding from CSS syntax
 
 " extensions
-Plug 'aserebryakov/vim-todo-lists'  " todo checklist file format
+Plug 'aserebryakov/vim-todo-lists' " todo checklist file format
 Plug 'junegunn/goyo.vim'        " focused writing
 
 call plug#end()
