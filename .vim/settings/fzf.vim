@@ -9,13 +9,6 @@ let g:fzf_action = {
     \'ctrl-v': 'vsplit'
 \}
 
-" enable preview for :Files command
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(
-  \   <q-args>,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%'),
-  \   <bang>0
-  \ )
-
+" always enable preview window
+let g:fzf_preview_window = 'right:60%'
 
