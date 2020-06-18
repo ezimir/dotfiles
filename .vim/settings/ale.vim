@@ -22,8 +22,15 @@ augroup END
 
 
 " enable fixers
-let g:ale_fixers = {'python': ['black']}
+let g:ale_fixers = {
+        \'python': ['black'],
+        \'javascript': ['eslint'],
+        \'json': ['prettier'],
+    \}
+
 let g:ale_python_black_options = '--config ' . expand('~/.config/black')
+let g:ale_javascript_eslint_options = '--config ' . expand('~/.config/eslint.json') . ' --resolve-plugins-relative-to ' . expand('~/.config/yarn/global/')
+let g:ale_javascript_prettier_options = '--config ' . expand('~/.config/prettier.toml')
 
 " run fixers on save
 let g:ale_fix_on_save = 1
