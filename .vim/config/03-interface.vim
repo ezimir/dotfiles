@@ -109,3 +109,11 @@ highlight CursorLine guibg=#35322d
 " https://unix.stackexchange.com/a/383044/106355
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
 autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
+" vim waits for <Esc>O sequences, let's short it out
+" for O (new line above) command
+" see https://github.com/vim/vim/issues/24#issuecomment-132350171
+" or https://www.johnhawthorn.com/2012/09/vi-escape-delays/
+set timeoutlen=1000
+set ttimeoutlen=10
+
