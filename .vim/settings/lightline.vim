@@ -43,3 +43,6 @@ function! GutentagsFlag() abort
     return gutentags#statusline()
 endfunction
 
+let g:lightline.tabline = { 'left': [['tabs']], 'right': [] }
+let g:lightline.winwidth = 211
+
