@@ -51,6 +51,9 @@ setopt NOIGNORE_EOF
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 
+RUN_CD_TITLE=0
+RUN_PROMPT=0
+
 EMULATOR=$(ps -h -o comm -p `ps -h -o ppid -p $$`)
 if [[ $EMULATOR == (guake|kitty) ]];
 then
@@ -58,13 +61,7 @@ then
     bindkey ";5C" forward-word
     bindkey ";5D" backward-word
 
-    # update window title
-    precmd () { # when directory changes
-        print -Pn "\e]0;%~\a"
-    }
-    preexec () { # when process starts
-        print -Pn "\e]0;${~1:gs/%/%%}\a"
-    }
+    RUN_CD_TITLE=1 # enable to use in precmd below
 fi
 
 # enable colors
@@ -102,12 +99,73 @@ vc_info() {
 setopt PROMPT_SUBST
 
 # customize prompt information
-PROMPT='%F{white}[%*] %F{cyan}%n %F{red}@ %F{cyan}%M%F{white}:%F{green}%~ %F{white}$(vc_info)%F{default}%# '
-#        HH:MM:SS ^           ^     full hostname ^                    ^            ^                    ^
-#                   $USERNAME ^                      current directory ^            ^                    ^
-#                                                                       branch name ^   shell privileges ^
-RPROMPT='%F{22}%?%F{default}'
-#         ^ last exit code
+if [ `cat /proc/sys/kernel/hostname` != "thinkbox" ]; then
+    PROMPT='%F{white}[%*] %F{cyan}%n %F{red}@ %F{cyan}%M%F{white}:%F{green}%~ %F{white}$(vc_info)%F{default}%# '
+    #        HH:MM:SS ^           ^     full hostname ^                    ^            ^                    ^
+    #                   $USERNAME ^                      current directory ^            ^                    ^
+    #                                                                       branch name ^   shell privileges ^
+
+    RPROMPT='%F{22}%?%F{default}'
+    #         ^ last exit code
+else
+    PROMPT="%F{cyan}λ%F{default} "
+    #                ^ branch, if available
+
+    RPROMPT='%F{22}%? %F{white}$(vc_info)[%*]%F{default}'
+    #              ^ last exit code
+    #                              ^ HH:MM:SS
+
+    RUN_PROMPT=1
+fi
+
+# prepare variables for lambda prompt
+LAST_CWD=`pwd`
+FIRST=0
+if [ "$LAST_CWD" = "$HOME" ]; then
+    FIRST=1
+fi
+
+# register empty command
+EMPTY=1
+accept-line-empty () {
+    if [ ${#${(z)BUFFER}} -eq 0 ]; then
+        EMPTY=0
+    fi
+    zle accept-line
+}
+
+zle -N accept-line-empty
+bindkey '^M' accept-line-empty
+
+precmd () {
+    # update window title
+    # when directory changes
+    if [ "$RUN_CD_TITLE" -eq 1 ]; then
+        print -Pn "\e]0;%~\a"
+    fi
+
+    # print extra info line (before PROMPT)
+    if [ "$RUN_PROMPT" -eq 1 ]; then
+        CUR_CWD=`pwd`
+        # only printed if changed
+        # or if first is different than $HOME
+        # or if previous command was empty
+        if [ "$CUR_CWD" != "$LAST_CWD" ] || [ "$FIRST" -eq "0" ] || [ "$EMPTY" -eq "0" ]; then
+            print -rP "%F{green}%~"
+            #                   ^ current directory
+            LAST_CWD=$CUR_CWD
+            FIRST=1
+            EMPTY=1
+        fi
+    fi
+}
+preexec () {
+    # update window title
+    # when process starts
+    if [ "$RUN_CD_TITLE" -eq 1 ]; then
+        print -Pn "\e]0;${~1:gs/%/%%}\a"
+    fi
+}
 
 # colorize man output
 man() {
