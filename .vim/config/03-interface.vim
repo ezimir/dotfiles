@@ -95,9 +95,16 @@ if has('gui_running')
     " make window semitransparent
     set transparency=7
 
-    " don't display scrollbar on left (happens with splits)
-    set guioptions-=L
+if &term =~ '256color' || &term =~ 'kitty'
+    " vim hardcodes background color erase even if the terminfo file does
+    " not contain bce (not to mention that libvte based terminals
+    " incorrectly contain bce in their terminfo files). This causes
+    " incorrect background rendering when using a color theme with a
+    " background color.
+    let &t_ut=''
+    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
 endif
+
 
 " highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=darkred guibg=darkred " name a new highlight group
