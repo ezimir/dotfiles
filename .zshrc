@@ -204,12 +204,13 @@ alias pass5=WordPasswordToClipboard
 
 # enable fzf
 source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/zsh/vendor-completions/_fzf
+source /usr/share/doc/fzf/examples/completion.zsh
 export FZF_DEFAULT_COMMAND="ag -U -p ~/.ignore -g ''"
 export FZF_DEFAULT_OPTS="
 --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
---bind '?:toggle-preview'
-"
+--bind '?:toggle-preview'"
+export FZF_ALC_C_COMMAND="ag /"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # completion for kitty
 if [[ $EMULATOR == kitty ]]; then
