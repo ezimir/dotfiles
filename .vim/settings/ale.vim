@@ -26,6 +26,7 @@ let g:ale_fixers = {
         \'python': ['black'],
         \'javascript': ['eslint'],
         \'json': ['prettier'],
+        \'php': ['phpcbf'],
     \}
 
 let g:ale_python_black_options = '--config ' . expand('~/.config/black')
