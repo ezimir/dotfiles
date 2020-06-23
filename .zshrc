@@ -211,6 +211,11 @@ export FZF_DEFAULT_OPTS="
 --bind '?:toggle-preview'
 "
 
+# completion for kitty
+if [[ $EMULATOR == kitty ]]; then
+    kitty + complete setup zsh | source /dev/stdin
+fi
+
 # enable automatic direnv
 if command -v direnv 1>/dev/null 2>&1; then
   # evaluate local .envrc files via direnv
