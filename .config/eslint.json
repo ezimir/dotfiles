@@ -12,7 +12,8 @@
         "semi": "error",
         "no-multiple-empty-lines": ["warn", { "max": 2, "maxBOF": 1 }],
         "vue/component-definition-name-casing": ["error", "kebab-case"],
-        "vue/prop-name-casing": ["error", "snake_case"]
+        "vue/prop-name-casing": ["error", "snake_case"],
+        "vue/one-component-per-file": ["off"]
     },
     "globals": {
         "Vue": "readonly",
