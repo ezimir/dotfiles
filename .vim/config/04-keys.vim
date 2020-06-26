@@ -35,6 +35,9 @@ nnoremap <right> <NOP>
 nnoremap j gj
 nnoremap k gk
 
+" make Y consistend with C and D (from cursor to end of line)
+nnoremap Y y$
+
 " disable ex mode
 nnoremap Q <NOP>
 
