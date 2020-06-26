@@ -32,6 +32,8 @@ let g:ale_fixers = {
 let g:ale_python_black_options = '--config ' . expand('~/.config/black')
 let g:ale_javascript_eslint_options = '--config ' . expand('~/.config/eslint.json') . ' --resolve-plugins-relative-to ' . expand('~/.config/yarn/global/')
 let g:ale_javascript_prettier_options = '--config ' . expand('~/.config/prettier.toml')
+let g:ale_php_phpcs_options = '--standard=' . expand('~/.config/phpcs.xml')
+let g:ale_php_phpcbf_standard = expand('~/.config/phpcs.xml')
 
 " run fixers on save
 let g:ale_fix_on_save = 1
