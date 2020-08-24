@@ -22,7 +22,11 @@ set fileformat=unix          " default file mode is unix
 set fileformats=unix,dos,mac " support all three, in this order
 set writebackup              " create a backup file when writing
 set nobackup                 " but don't keep it after write is done
-set noswapfile               " don't write swapfile
+set backupcopy=auto          " use rename-and-write-new method whenever safe
+set backupdir^=~/.vim/backup//
+
+set swapfile                 " protect changes between writes (default updatecount (200 keystrokes), updatetime (4 seconds))
+set directory^=~/.vim/swap// " where to write swapfiles
 
 " search for ".tags" file in current dir, and recursively upwards
 set tags=./.tags;/
