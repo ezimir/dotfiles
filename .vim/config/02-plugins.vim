@@ -23,7 +23,7 @@ Plug 'majutsushi/tagbar'        " file hierarchy overviewin sidebar
 " editing
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' } " tabular alignment
 Plug 'tpope/vim-commentary'     " comment/uncomment whole blocks
-Plug 'junegunn/fzf'             " fuzzy file finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy file finder
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'        " autocompletion using <Tab>
 Plug 'vim-scripts/closetag.vim' " autoclose HTML tags
