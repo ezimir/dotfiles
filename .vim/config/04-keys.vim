@@ -35,6 +35,10 @@ nnoremap <right> <NOP>
 nnoremap j gj
 nnoremap k gk
 
+" improve movement over screen (scrolling)
+nnoremap <c-j> <c-e>
+nnoremap <c-k> <c-y>
+
 " make Y consistend with C and D (from cursor to end of line)
 nnoremap Y y$
 
