@@ -27,7 +27,8 @@ zstyle ':completion:*:*:(vi|vim|mvim|mvimt):*:*files' ignored-patterns '*.(a|dyl
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
-setopt appendhistory autocd extendedglob nomatch notify
+setopt append_history hist_ignore_all_dups
+setopt autocd extendedglob nomatch notify
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
