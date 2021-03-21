@@ -207,7 +207,8 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 export FZF_DEFAULT_COMMAND="ag -U -p ~/.ignore -g ''"
 export FZF_DEFAULT_OPTS="
---preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--preview-window right:60%
+--preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || (echo {} | fold -w $(expr $(tput cols) / 100 \* 60)) 2> /dev/null | head -200'
 --bind '?:toggle-preview'"
 export FZF_ALC_C_COMMAND="ag /"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
