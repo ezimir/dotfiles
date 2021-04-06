@@ -28,6 +28,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'        " autocompletion using <Tab>
 Plug 'vim-scripts/closetag.vim' " autoclose HTML tags
 Plug 'mattn/emmet-vim'          " HTML tag expanding from CSS syntax
+Plug 'posva/vim-vue'            " improved syntax for .vue files
 
 " extensions
 Plug 'aserebryakov/vim-todo-lists' " todo checklist file format
