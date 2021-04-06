@@ -7,15 +7,44 @@
         "browser": true,
         "es6": true
     },
-    "extends": ["eslint:recommended", "plugin:vue/vue3-recommended"],
+    "extends": [
+        "eslint:recommended", "plugin:vue/recommended"],
     "rules": {
         "semi": "error",
-        "indent": ["error", 4],
+        "indent": ["error", 4, { "SwitchCase": 1 }],
         "camelcase": "off",
         "no-multiple-empty-lines": ["warn", { "max": 2, "maxBOF": 1 }],
+        "vue/one-component-per-file": "off",
+        "vue/singleline-html-element-content-newline": "off",
+        "vue/no-deprecated-v-on-native-modifier": "off",
+        "vue/no-v-html": "off",
         "vue/component-definition-name-casing": ["error", "kebab-case"],
         "vue/prop-name-casing": ["error", "snake_case"],
-        "vue/one-component-per-file": ["off"]
+        "vue/html-indent": [
+            "error",
+            4,
+            {
+                "alignAttributesVertically": false
+            }
+        ],
+        "vue/max-attributes-per-line": [
+            "warn",
+            {
+                "singleline": 3,
+                "multiline": {
+                    "max": 3,
+                    "allowFirstLine": true
+                }
+            }
+        ],
+        "vue/html-self-closing": [
+            "error",
+            {
+                "html": {
+                    "void": "any"
+                }
+            }
+        ]
     },
     "globals": {
         "Vue": "readonly",
