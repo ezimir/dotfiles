@@ -35,6 +35,7 @@ set cursorline     " display cursor line
 set ruler          " show cursor position in status bar
 set scrolloff=5    " lines above/below cursor when scrolling
 set lazyredraw     " don't redraw while executing macros (good performance config)
+set title          " propagate file name to tab/UI title
 
 " dont wrap lines
 set nowrap
