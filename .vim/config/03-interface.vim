@@ -95,6 +95,7 @@ endif
 if has('gui_running')
     " make window semitransparent
     set transparency=7
+endif
 
 if &term =~ '256color' || &term =~ 'kitty'
     " vim hardcodes background color erase even if the terminfo file does
